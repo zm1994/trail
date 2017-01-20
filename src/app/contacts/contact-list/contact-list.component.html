@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="row">
+      <div class="col-md-9">
+        <h2>
+          Contacts
+        </h2>
+      </div>
+      <div class="col-md-3" style= "text-align:right;">
+        <button style="margin-top:20px;" class="btn btn-default" (click)="createNewContact()">
+          <span class="glyphicon glyphicon-plus"></span>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="list-group">
+          <li class="list-group-item" 
+            *ngFor="let contact of contacts"
+            (click)="selectContact(contact)"
+            [class.active]="contact === selectedContact">
+            {{contact.name}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-6">
+    <contact-details 
+      [contact]="selectedContact"
+      [createHandler]="addContact.bind(this)"
+      [updateHandler]="updateContact.bind(this)"
+      [deleteHandler]="deleteContact.bind(this)">
+    </contact-details>
+  </div>
+</div>
