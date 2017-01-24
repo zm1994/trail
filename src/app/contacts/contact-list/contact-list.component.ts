@@ -60,6 +60,7 @@ export class ContactListComponent implements OnInit {
     var idx = this.indexOfContact(contactId);
     if (idx !== -1) {
       this.contacts.splice(idx, 1);
+      this.selectContact(null);
     }
     return this.contacts;
   }

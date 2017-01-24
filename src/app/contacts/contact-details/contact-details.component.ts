@@ -24,21 +24,18 @@ export class ContactDetailsComponent {
   createContact(contact: Contact) {
     this.contactService.createContact(contact).then((newContact: Contact) => {
       this.createHandler(newContact);
-      this.contact = newContact;
     });
   }
 
   updateContact(contact: Contact): void {
     this.contactService.updateContact(contact).then((updatedContact: Contact) => {
       this.updateHandler(updatedContact);
-      this.contact = updatedContact;
     });
   }
 
   deleteContact(contactId: String): void {
     this.contactService.deleteContact(contactId).then((deletedContactId: String) => {
       this.deleteHandler(deletedContactId);
-      this.contact = null;
     });
   }
 }
