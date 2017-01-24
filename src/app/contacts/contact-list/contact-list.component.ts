@@ -32,6 +32,11 @@ export class ContactListComponent implements OnInit {
         });
       });
   }
+  private indexOfContact = (contactId: String) => {
+    return this.contacts.findIndex((contact) => {
+      return contact._id === contactId;
+    });
+  }
 
   selectContact(contact: Contact) {
     this.selectedContact = contact
@@ -51,26 +56,25 @@ export class ContactListComponent implements OnInit {
     this.selectContact(contact);
   }
 
-  deleteContact(contactId: String) {
-    var idx = this.contacts.findIndex((c) => {
-      return c._id === contactId;
-    });
+  deleteContact = (contactId: String) => {
+    var idx = this.indexOfContact(contactId);
     if (idx !== -1) {
-      return this.contacts.splice(idx, 1);
+      this.contacts.splice(idx, 1);
     }
     return this.contacts;
   }
 
-  addContact(contact: Contact) {
-    this.contacts.push(contact)
+  addContact = (contact: Contact) => {
+    this.contacts.push(contact);
+    this.selectContact(contact);
     return this.contacts;
   }
 
-  updateContact(contact: Contact) {
-    for (let i in this.contacts) {
-      if (this.contacts[i]._id === contact._id) {
-        this.contacts[i] = contact;
-      }
+  updateContact = (contact: Contact) => {
+    var idx = this.indexOfContact(contact._id);
+    if (idx !== -1) {
+      this.contacts[idx] = contact;
+      this.selectContact(contact);
     }
     return this.contacts;
   }
