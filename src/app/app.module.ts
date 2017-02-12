@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ContactDetailsComponent } from './contacts/contact-details/contact-details.component';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
+import { RouterModule } from '@angular/router'  
+import { ROUTES } from './routes'
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { ContactListComponent } from './contacts/contact-list/contact-list.compo
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]
