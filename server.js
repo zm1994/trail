@@ -59,7 +59,7 @@ app.get("/api/contacts", function(req, res) {
 });
 
 app.get("/api/availdir/:id", function(req, res) {
-  db.collection(AVAILABLE_DIRECTIONS).find({"departure_id": 0}).toArray(function(err, docs) {
+  db.collection(AVAILABLE_DIRECTIONS).find({"departure_id": Number(req.params.id)}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
     } else {
