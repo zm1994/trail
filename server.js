@@ -5,6 +5,7 @@ var ObjectID = mongodb.ObjectID;
 
 var CONTACTS_COLLECTION = "contacts";
 var AVAILABLE_DIRECTIONS = 'available_directions';
+var AIRPORTS = 'airports'
 
 var app = express();
 app.use(bodyParser.json());
@@ -58,7 +59,17 @@ app.get("/api/contacts", function(req, res) {
 });
 
 app.get("/api/availdir/:id", function(req, res) {
-  db.collection(AVAILABLE_DIRECTIONS).find({"departure_id": 0}).toArray(function(err, docs) {
+  db.collection(AVAILABLE_DIRECTIONS).find({"departure_id": req.params.id}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to get contacts.");
+    } else {
+      res.status(200).json(docs);
+    }
+  });
+});
+
+app.get("/api/airport/:code", function(req, res) {
+  db.collection(AIRPORTS).find({"code_airport": req.params.code}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
     } else {
