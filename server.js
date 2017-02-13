@@ -6,6 +6,7 @@ var ObjectID = mongodb.ObjectID;
 var CONTACTS_COLLECTION = "contacts";
 var AVAILABLE_DIRECTIONS = 'available_directions';
 var AIRPORTS = 'airports'
+var DIRECTIONS_WITH_TRANSFERS = 'directions_with_transfers'
 
 var app = express();
 app.use(bodyParser.json());
@@ -48,8 +49,19 @@ function handleError(res, reason, message, code) {
  *    POST: creates a new contact
  */
 
-app.get("/api/contacts", function(req, res) {
-  db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
+// app.get("/api/contacts", function(req, res) {
+//   db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
+//     if (err) {
+//       handleError(res, err.message, "Failed to get contacts.");
+//     } else {
+//       res.status(200).json(docs);
+//     }
+//   });
+// });
+
+app.get("/api/directions_with_transfers/", function(req, res) {
+  db.collection(DIRECTIONS_WITH_TRANSFERS).find({"departure_id": Number(req.body.departure_id)})
+    .toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
     } else {
@@ -58,8 +70,9 @@ app.get("/api/contacts", function(req, res) {
   });
 });
 
-app.get("/api/availdir/:id", function(req, res) {
-  db.collection(AVAILABLE_DIRECTIONS).find({"departure_id": Number(req.params.id)}).toArray(function(err, docs) {
+app.get("/api/availdirections/", function(req, res) {
+  db.collection(AVAILABLE_DIRECTIONS).find({"departure_id": Number(req.body.departure_id)})
+    .toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
     } else {
@@ -78,22 +91,22 @@ app.get("/api/airport/:code", function(req, res) {
   });
 });
 
-app.post("/api/contacts", function(req, res) {
-  var newContact = req.body;
-  newContact.createDate = new Date();
+// app.post("/api/contacts", function(req, res) {
+//   var newContact = req.body;
+//   newContact.createDate = new Date();
 
-  if (!req.body.name) {
-    handleError(res, "Invalid user input", "Must provide a name.", 400);
-  }
+//   if (!req.body.name) {
+//     handleError(res, "Invalid user input", "Must provide a name.", 400);
+//   }
 
-  db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
-    if (err) {
-      handleError(res, err.message, "Failed to create new contact.");
-    } else {
-      res.status(201).json(doc.ops[0]);
-    }
-  });
-});
+//   db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
+//     if (err) {
+//       handleError(res, err.message, "Failed to create new contact.");
+//     } else {
+//       res.status(201).json(doc.ops[0]);
+//     }
+//   });
+// });
 
 /*  "/api/contacts/:id"
  *    GET: find contact by id

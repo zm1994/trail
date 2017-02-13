@@ -1,0 +1,8 @@
+<form [formGroup]="formRoute" class="form-group" (ngSubmit)="searchRoute()">
+    <input class="form-control" pattern="^[a-zA-Z.]{2,30}$" #departure formControl="departure_code" 
+            (input)="departure.value=$event.target.value.toUpperCase()"
+            placeholder="departure"/>
+    <input class="form-control" pattern="^[a-zA-Z.]{2,30}$" #arrival formControl="departure_code" 
+            (input)="arrival.value=$event.target.value.toUpperCase()"
+            placeholder="arrival"/>
+</form>
