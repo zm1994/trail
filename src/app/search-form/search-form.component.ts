@@ -6,23 +6,21 @@ import { SearchDirection } from '../models/search-direction.model'
     selector: 'search-form',
     templateUrl: 'search-form.component.html',
     styleUrls: ['search-form.component.css'],
-    providers: [FormGroup]
 })
 
 export class SearchFormComponent implements OnInit {
     @Output()
     searchRouteEmitter: EventEmitter<SearchDirection>;
+    formRoute: FormGroup;
 
-    constructor(
-        private builder: FormBuilder,
-        private formRoute: FormGroup ){
+    constructor(private builder: FormBuilder){
             this.searchRouteEmitter = new EventEmitter<SearchDirection>();
         }
-    
+
     ngOnInit() {
         this.formRoute = this.builder.group({
-            departure_code: ['', Validators.required],
-            arrival_code: ''
+            departure_code: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(3)])],
+            arrival_code: ['', Validators.compose([Validators.minLength(3), Validators.maxLength(3)])]
         })
     }
 
@@ -34,5 +32,16 @@ export class SearchFormComponent implements OnInit {
                 new SearchDirection(this.formRoute.controls['departure_code'].value,
                                     this.formRoute.controls['arrival_code'].value))
         }
+        else {
+          console.log('invalid')
+        }
     }
+
+  checkInput(event: KeyboardEvent ) {
+      //allow only [A-Z a-z]
+      if((event.keyCode <= 65 || event.keyCode >= 90) &&
+         (event.keyCode <= 97 || event.keyCode >= 122)) {
+        event.preventDefault();
+      }
+  }
 }

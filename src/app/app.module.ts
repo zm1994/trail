@@ -9,7 +9,7 @@ import { AirportsRouteService } from './services/airports-route.service'
 import { ContactDetailsComponent } from './contacts/contact-details/contact-details.component';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
 import { SearchFormComponent } from './search-form/search-form.component'
-import { RouterModule } from '@angular/router'  
+import { RouterModule } from '@angular/router'
 import { ROUTES } from './routes'
 
 import { GmapsComponent } from './gmaps/gmaps.component'

@@ -1,8 +1,8 @@
-<form [formGroup]="formRoute" class="form-group" (ngSubmit)="searchRoute()">
-    <input class="form-control" pattern="^[a-zA-Z.]{2,30}$" #departure formControl="departure_code" 
+<form [formGroup]="formRoute" class="form-group has_error" [class.has_error]="formRoute.invalid" (keypress)="checkInput($event)" (keyup.enter)="searchRoute()">
+    <input class="form-control" #departure [formControl]="formRoute.controls['departure_code']" placeholder="departure"
             (input)="departure.value=$event.target.value.toUpperCase()"
-            placeholder="departure"/>
-    <input class="form-control" pattern="^[a-zA-Z.]{2,30}$" #arrival formControl="departure_code" 
+            minlength="3" maxlength="3" [class.has_error]="formRoute.invalid"/>
+    <input class="form-control" #arrival [formControl]="formRoute.controls['arrival_code']"  placeholder="arrival"
             (input)="arrival.value=$event.target.value.toUpperCase()"
-            placeholder="arrival"/>
+            minlength="3" maxlength="3" [class.has_error]="formRoute.invalid"/>
 </form>
