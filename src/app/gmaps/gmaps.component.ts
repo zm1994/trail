@@ -1,4 +1,5 @@
-import { Component } from '@angular/core'
+import { Component, ViewChild } from '@angular/core'
+import { SebmGoogleMap } from 'angular2-google-maps/core';
 
 @Component({
     selector: 'gmaps',
@@ -7,5 +8,14 @@ import { Component } from '@angular/core'
 })
 
 export class GmapsComponent {
+    @ViewChild(SebmGoogleMap) gmap: SebmGoogleMap;
+    public isCollapsed: boolean = false;
 
+    public collapsed(event: any): void {
+        console.log(event);
+    }
+
+    public expanded(event: any): void {
+        console.log(event);
+    }
 }

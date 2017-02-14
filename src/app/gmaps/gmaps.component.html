@@ -1,14 +1,28 @@
-<sebm-google-map [latitude]="51.678418" [longitude]="7.809007" [zoom]="5">
-     <sebm-google-map-polyline>
-         <sebm-google-map-polyline-point [latitude]="60.69028" [longitude]="-161.97861">
-         </sebm-google-map-polyline-point>
-         <sebm-google-map-polyline-point [latitude]="60.70278" [longitude]="-161.77833">
-         </sebm-google-map-polyline-point>
-     </sebm-google-map-polyline>
-     <sebm-google-map-polyline>
-         <sebm-google-map-polyline-point [latitude]="-9.29167" [longitude]="-76.00528">
-         </sebm-google-map-polyline-point>
-         <sebm-google-map-polyline-point [latitude]="-20.752254" [longitude]="-51.681897">
-         </sebm-google-map-polyline-point>
-     </sebm-google-map-polyline>
- </sebm-google-map>
+<section class="row">
+    <aside class="col-md-3">
+        <button type="button" class="btn btn-primary btn-variants-route" (click)="isCollapsed=!isCollapsed">Toggle collapse</button>
+        <div class="list-group" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
+            <button type="button" class="list-group-item list-group-item-action active">Cras justo odio</button>
+            <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
+            <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+            <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
+            <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+        </div>
+    </aside>
+    <article class="col-md-12" [class.col-md-9]="!isCollapsed" [class.col-md-12]="isCollapsed">
+        <sebm-google-map #gmap [latitude]="51.678418" [longitude]="7.809007" [zoom]="5">
+            <sebm-google-map-polyline>
+                <sebm-google-map-polyline-point [latitude]="60.69028" [longitude]="-161.97861">
+                </sebm-google-map-polyline-point>
+                <sebm-google-map-polyline-point [latitude]="60.70278" [longitude]="-161.77833">
+                </sebm-google-map-polyline-point>
+            </sebm-google-map-polyline>
+            <sebm-google-map-polyline>
+                <sebm-google-map-polyline-point [latitude]="-9.29167" [longitude]="-76.00528">
+                </sebm-google-map-polyline-point>
+                <sebm-google-map-polyline-point [latitude]="-20.752254" [longitude]="-51.681897">
+                </sebm-google-map-polyline-point>
+            </sebm-google-map-polyline>
+        </sebm-google-map>
+    </article>
+</section>

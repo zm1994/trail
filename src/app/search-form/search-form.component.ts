@@ -39,8 +39,8 @@ export class SearchFormComponent implements OnInit {
 
   checkInput(event: KeyboardEvent ) {
       //allow only [A-Z a-z]
-      if((event.keyCode <= 65 || event.keyCode >= 90) &&
-         (event.keyCode <= 97 || event.keyCode >= 122)) {
+      if((event.keyCode < 65 || event.keyCode > 90) &&
+         (event.keyCode < 97 || event.keyCode > 122)) {
         event.preventDefault();
       }
   }
