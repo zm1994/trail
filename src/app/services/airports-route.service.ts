@@ -13,7 +13,7 @@ export class AirportsRouteService {
 
     searchAvailableDirections(departure_code: string) {
         // let body = { departure_code:  departure_code.toLowerCase()}
-        return this.http.get('/api/availdirections/'+ departure_code.toLowerCase())
+        return this.http.get('/api/airport/'+ departure_code.toLowerCase())
             .map((res) => {
                 return res.json()
             })
