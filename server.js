@@ -24,25 +24,7 @@ var DirectionWithTransfers = require('./src/server/models/direction_with_transfe
 
 // Connect to the database before starting the application server.
 
-mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
-  if (err) {
-    console.log(err);
-    process.exit(1);
-  }
-
-  // Save database object from the callback for reuse.
-  db = database;
-  console.log("Database connection ready");
-
-  // Initialize the app.
-  var server = app.listen(process.env.PORT || 8080, function () {
-    var port = server.address().port;
-    console.log("App now running on port", port);
-    console.log(process.env.MONGODB_URI)
-  });
-});
-
-// mongoose.connect(process.env.MONGODB_URI, function (err, database) {
+// mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
 //   if (err) {
 //     console.log(err);
 //     process.exit(1);
@@ -56,8 +38,26 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
 //   var server = app.listen(process.env.PORT || 8080, function () {
 //     var port = server.address().port;
 //     console.log("App now running on port", port);
+//     console.log(process.env.MONGODB_URI)
 //   });
 // });
+
+mongoose.connect(process.env.MONGODB_URI, function (err, database) {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  }
+
+  // Save database object from the callback for reuse.
+  db = database;
+  console.log("Database connection ready");
+
+  // Initialize the app.
+  var server = app.listen(process.env.PORT || 8080, function () {
+    var port = server.address().port;
+    console.log("App now running on port", port);
+  });
+});
 
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
@@ -95,13 +95,20 @@ app.get("/api/availdirections/:code", function(req, res) {
 });
 
 app.get("/api/airport/:code", function(req, res) {
-  db.collection(AIRPORTS).find({"code_airport": req.params.code}).toArray(function(err, docs) {
-    if (err) {
-      handleError(res, err.message, "Failed to get contacts.");
-    } else {
-      res.status(200).json(docs);
-    }
-  });
+  // db.collection(AIRPORTS).find({"code_airport": req.params.code}).toArray(function(err, docs) {
+  //   if (err) {
+  //     handleError(res, err.message, "Failed to get contacts.");
+  //   } else {
+  //     res.status(200).json(docs);
+  //   }
+  // });
+  Airport.findOne({code_airport: req.params.code}, function(err, docs) {
+      if (err) {
+        handleError(res, err.message, "Failed to get contacts.");
+      } else {
+        res.status(200).json(docs);
+      }
+    })
 });
 
 // app.post("/api/contacts", function(req, res) {
