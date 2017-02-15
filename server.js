@@ -95,7 +95,7 @@ app.get("/api/availdirections/:code", function(req, res) {
 });
 
 app.get("/api/airport/:code", function(req, res) {
-  db.collection(AIRPORTS).find({"code_airport": res.params.code}).toArray(function(err, docs) {
+  db.collection(AIRPORTS).find({"code_airport": req.params.code}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
     } else {
