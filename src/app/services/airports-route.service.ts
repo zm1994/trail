@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { SearchDirection } from '../models/search-direction.model'
-import { Http } from '@angular/http' 
+import { Http } from '@angular/http'
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
@@ -8,22 +8,20 @@ import { Airport } from '../models/airport.model'
 
 @Injectable()
 export class AirportsRouteService {
-    
+
     constructor(private http: Http){}
 
-    searchAvailableDirections(direction: SearchDirection) {
-        return this.http.get('/api/airport/' + direction.departure_code)
+    searchAvailableDirections(departure_code: string) {
+        // let body = { departure_code:  departure_code.toLowerCase()}
+        return this.http.get('/api/availdirections/'+ departure_code.toLowerCase())
             .map((res) => {
-                let departure_airport = <Airport> res.json().data;
-                let body = JSON.stringify({"departure_id": departure_airport.id_airport})
-                this.http.get('/api/availdir/', {body: body})
-                    
+                return res.json()
             })
             .catch((error) => Observable.throw(error.json() || 'Server error'))
-        
+
     }
 
     searchDirectionsWithTransfers(direction: SearchDirection) {
-        
+
     }
 }

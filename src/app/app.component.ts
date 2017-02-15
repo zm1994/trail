@@ -11,14 +11,17 @@ import { AirportsRouteService } from './services/airports-route.service'
 export class AppComponent {
   title = 'app works!';
 
- 
-  
+
+
 
   constructor(private airportServ: AirportsRouteService){}
 
   onSearchRoute(event: SearchDirection) {
-      if(!!event.arrival_code) {
-        // this.airportServ.searchDirectionsWithTransfers(event)
+    console.log(event)
+      if(!event.arrival_code) {
+        this.airportServ.searchAvailableDirections(event.departure_code)
+          .subscribe((res) => console.log(res),
+                      (err) => console.log(err))
       }
   }
 
