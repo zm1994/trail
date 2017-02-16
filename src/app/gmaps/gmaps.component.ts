@@ -11,6 +11,10 @@ export class GmapsComponent {
     @ViewChild(SebmGoogleMap) gmap: SebmGoogleMap;
     public isCollapsed: boolean = false;
 
+    constructor() {
+        
+    }
+
     public collapsed(event: any): void {
         console.log(event);
     }
@@ -18,4 +22,6 @@ export class GmapsComponent {
     public expanded(event: any): void {
         console.log(event);
     }
+
+    
 }

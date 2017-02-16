@@ -5,6 +5,7 @@
       <i class="fa fa-plane col-md-6 col-sm-6 col-xs-6" aria-hidden="true"></i>
     </header>
   </nav>
+  <progressbar class="progress-striped active" [value]="progress" [max]="100" [animate]="true"></progressbar>
   <search-form (searchRouteEmitter)="onSearchRoute($event)"></search-form>
   <gmaps></gmaps>
 </div>

@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { AlertModule } from 'ng2-bootstrap';
 import { CollapseModule } from 'ng2-bootstrap';
+import { ProgressbarModule } from 'ng2-bootstrap'
 
 import { AppComponent } from './app.component';
 import { AirportsRouteService } from './services/airports-route.service'
@@ -33,6 +34,7 @@ import { GmapsComponent } from './gmaps/gmaps.component'
     CollapseModule.forRoot(),
     FormsModule,
     HttpModule,
+    ProgressbarModule.forRoot(),
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
 

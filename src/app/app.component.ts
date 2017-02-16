@@ -10,19 +10,28 @@ import { AirportsRouteService } from './services/airports-route.service'
 })
 export class AppComponent {
   title = 'app works!';
+  progress: number;
 
-
-
-
-  constructor(private airportServ: AirportsRouteService){}
+  constructor(private airportServ: AirportsRouteService) {
+    this.progress = 0;
+  }
 
   onSearchRoute(event: SearchDirection) {
     console.log(event)
       if(!event.arrival_code) {
+        let timer = setTimeout(this.increaseProgress)
         this.airportServ.searchAvailableDirections(event.departure_code)
-          .subscribe((res) => console.log(res),
+          .subscribe((res) => {
+            clearTimeout(timer)
+            this.progress = 0;
+            console.log(res)
+          },
                       (err) => console.log(err))
       }
   }
+
+  increaseProgress() {
+        this.progress += 10;
+    }
 
 }
