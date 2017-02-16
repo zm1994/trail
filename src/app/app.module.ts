@@ -8,22 +8,14 @@ import { CollapseModule } from 'ng2-bootstrap';
 import { ProgressbarModule } from 'ng2-bootstrap'
 
 import { AppComponent } from './app.component';
-import { AirportsRouteService } from './services/airports-route.service'
-import { ContactDetailsComponent } from './contacts/contact-details/contact-details.component';
-import { ContactListComponent } from './contacts/contact-list/contact-list.component';
-import { SearchFormComponent } from './search-form/search-form.component'
 import { RouterModule } from '@angular/router'
 import { ROUTES } from './routes'
 
-import { GmapsComponent } from './gmaps/gmaps.component'
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ContactDetailsComponent,
-    ContactListComponent,
-    GmapsComponent,
-    SearchFormComponent
+    AppComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -39,7 +31,7 @@ import { GmapsComponent } from './gmaps/gmaps.component'
     RouterModule.forRoot(ROUTES),
 
   ],
-  providers: [AirportsRouteService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
