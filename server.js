@@ -34,6 +34,7 @@ pool.connect(function(err, client) {
 
 // exports.app = app;
 exports.pool_connection = pool;
+
 var trail = require('./server/trail_routes')
 app.get("/api/test", function(req, res) {
   pool.query('SELECT *FROM countries', function(err, result) {
@@ -44,7 +45,8 @@ app.get("/api/test", function(req, res) {
   });
 });
 
-app.get("/api/search/:search", trail.searchTrail)
+// app.get("/api/search/", trail.searchTrail)
+app.get("/api/search/", trail.searchTrail)
 
 // app.get('api/search/:search',  function(req, res) {
 //     var search_param = '%' + req.params.search + '%'

@@ -1,5 +1,5 @@
 import { Component, Injectable } from '@angular/core'
-import { Http } from '@angular/http'
+import { Http, URLSearchParams } from '@angular/http'
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
@@ -13,13 +13,10 @@ export class TrailService {
     constructor(private http: Http) { }
     
     searchTrails(name: string) {
-        let body = {
-            search_params: name
-        }
-
-        return this.http.get('api/trails/search/test')
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('param', name)
+        return this.http.get('/api/search/', { search: params })
             .map((res) => {
-                console.log(res.json())
                 return res.json()
             })
             .catch((error) => Observable.throw(error.json() || 'Server error'))

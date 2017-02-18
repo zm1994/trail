@@ -10,6 +10,9 @@ import { RouterModule } from '@angular/router'
 import { ROUTES } from './routes'
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component'
+import { SearchComponent } from './search/search.component'
+import { TrailComponent } from './trail/trail.component'
 
 import { TrailService } from './services/trail.service'
 
@@ -17,7 +20,10 @@ import { TrailService } from './services/trail.service'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    SearchComponent,
+    TrailComponent
   ],
   imports: [
     AgmCoreModule.forRoot({

@@ -14,7 +14,9 @@ export class AppComponent {
 
   getTrails() {
     console.log('click')
-    this.trailServ.searchTrails('test');
+    this.trailServ.searchTrails('test')
+      .subscribe((res) => console.log(res),
+                 (err) => console.log(err))
   }
 
 }

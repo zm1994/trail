@@ -1,0 +1,15 @@
+<section class="search">
+    <h1 class="search-title">Find your route</h1>
+    <div class="form-group">
+        <div class="icon-addon addon-lg">
+            <input type="search" #searchInput class="input-large form-control" placeholder="Enter your location" id="search_input" [(ngModel)]="inputValue">
+            <label for="search_input" class="glyphicon glyphicon-search" rel="tooltip" title="email"></label>
+        </div>
+        <div class="list-group">
+            <a *ngFor="let variant of searchVarians" class="list-group-item list-group-item-action"
+               [routerLink]="['/trail', variant.id]">
+                {{variant.name}}
+            </a>
+        </div>
+    </div>
+</section>

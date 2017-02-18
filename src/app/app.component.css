@@ -7,17 +7,7 @@
     margin-right: 0px;
 }
 
-.navbar {
-    background: #558C89;
-    color: white;
-    padding: 5px 5px 5px 5px;
-}
-
-h1 {
-    margin-top: 3px;
-}
-
-.fa-plane{
-    text-align: right;
-    font-size: 48px;
+.containder-fluid {
+    padding-left: 0;
+    padding-right: 0;
 }
