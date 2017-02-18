@@ -17,43 +17,24 @@ var pool = new Pool({
   host: 'ec2-107-22-223-6.compute-1.amazonaws.com',
   database: 'd4pftr4b939hds',
   max: 10, // max number of clients in pool
-  idleTimeoutMillis: 2000, // close & remove clients which have been idle > 1 second
+  idleTimeoutMillis: 15000, // close & remove clients which have been idle > 1 second
 });
 
 pool.connect(function(err, client) {
   if(err) {
     throw err;
   }
-  console.log(client);
+  console.log(client)
+  //create server if connection with database success
   var server = app.listen(process.env.PORT || 8080, function () {
   var port = server.address().port;
     console.log("App now running on port", port);
   });
 })
 
-
-// var pg = require('pg');
-
-// pg.defaults.ssl = true;
-// console.log(process.env.DATABASE_URL);
-// pg.connect(process.env.DATABASE_URL || connection_string
-// , function(err, client) {
-//   if (err) {
-//     console.log(process.env)
-//     console.log(process.env.DATABASE_URL);
-//     throw err;
-//   } 
-//   console.log('Connected to postgres! Getting schemas...');
-
-//  console.log(client)
-//  var server = app.listen(process.env.PORT || 8080, function () {
-//     var port = server.address().port;
-//     console.log("App now running on port", port);
-//   });
-// });
-
-
-
+// exports.app = app;
+exports.pool_connection = pool;
+var trail = require('./server/trail_routes')
 app.get("/api/test", function(req, res) {
   pool.query('SELECT *FROM countries', function(err, result) {
     if(err)
@@ -63,3 +44,27 @@ app.get("/api/test", function(req, res) {
   });
 });
 
+app.get("/api/search/:search", trail.searchTrail)
+
+// app.get('api/search/:search',  function(req, res) {
+//     var search_param = '%' + req.params.search + '%'
+//     pool.query("select id, name from trails where lower(name) like $1", [search_param], function(err, client) {
+//         if(err) 
+//             res.send(err.message || err)
+//         else {
+//             res.send(client.rows)
+//         }
+//     })
+// })
+
+
+// app.get("/api/search/:search", function(req, res) {
+//   var search_param = '%' + req.params.search + '%'
+//     pool.query("SELECT id, name FROM trails WHERE lower(name) like $1",[search_param], function(err, client) {
+//         if(err) 
+//             res.send(err.message || err)
+//         else {
+//             res.send(client.rows)
+//         }
+//     })
+// });

@@ -6,10 +6,12 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { AlertModule } from 'ng2-bootstrap';
 import { CollapseModule } from 'ng2-bootstrap';
 import { ProgressbarModule } from 'ng2-bootstrap'
-
-import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router'
 import { ROUTES } from './routes'
+
+import { AppComponent } from './app.component';
+
+import { TrailService } from './services/trail.service'
 
 
 
@@ -31,7 +33,7 @@ import { ROUTES } from './routes'
     RouterModule.forRoot(ROUTES),
 
   ],
-  providers: [],
+  providers: [TrailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
