@@ -32,14 +32,15 @@ pg.connect(process.env.DATABASE_URL
   if (err) {
     console.log(process.env)
     console.log(process.env.DATABASE_URL);
-  } throw err;
+    throw err;
+  } 
   console.log('Connected to postgres! Getting schemas...');
 
  console.log(client)
-//  var server = app.listen(process.env.PORT || 8080, function () {
-//     var port = server.address().port;
-//     console.log("App now running on port", port);
-//   });
+ var server = app.listen(process.env.PORT || 8080, function () {
+    var port = server.address().port;
+    console.log("App now running on port", port);
+  });
 });
 
 // db.connect().then(function (obj) {
