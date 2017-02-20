@@ -6,9 +6,19 @@ exports.searchTrail = function(req, res) {
     var search_param = '%' + req.query.param + '%'
     pool.query("SELECT id, name FROM trails WHERE lower(name) like lower($1)",[search_param], function(err, client) {
         if(err)
-            res.send(err.message || err)
+            res.status(500).send(err.message || err)
         else {
             res.send(client.rows)
         }
     })
+}
+
+exports.getCountries = function(req, res){
+  pool.query("Select *from show_countries", function(err, client) {
+    if(err)
+      res.status(500).send(err.message || err)
+    else {
+      res.send(client.rows)
+    }
+  })
 }

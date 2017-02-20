@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router'
 import { ROUTES } from './routes'
 
 import { AppComponent } from './app.component';
+import { CountriesComponent } from './home/countries/countries.component'
 import { HomeComponent } from './home/home.component'
 import { SearchComponent } from './search/search.component'
 import { TrailComponent } from './trail/trail.component'
@@ -21,6 +22,7 @@ import { TrailService } from './services/trail.service'
 @NgModule({
   declarations: [
     AppComponent,
+    CountriesComponent,
     HomeComponent,
     SearchComponent,
     TrailComponent

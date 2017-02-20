@@ -45,3 +45,5 @@ var trail = require('./server/trail_api')
 // });
 
 app.get("/api/search/", trail.searchTrail);
+
+app.get('/api/countries', trail.getCountries);

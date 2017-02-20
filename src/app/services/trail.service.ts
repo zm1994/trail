@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class TrailService {
     constructor(private http: Http) { }
-    
+
     searchTrails(name: string) {
         let params: URLSearchParams = new URLSearchParams();
         params.set('param', name)
@@ -20,5 +20,11 @@ export class TrailService {
                 return res.json()
             })
             .catch((error) => Observable.throw(error.json() || 'Server error'))
+    }
+
+    getCountries() {
+      return this.http.get('/api/countries')
+                    .map((res) => res.json())
+                    .catch((error) => Observable.throw(error.json() || 'Server error'))
     }
 }
