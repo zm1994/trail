@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core'
 import { TrailService } from '../../services/trail.service'
 
 @Component({
@@ -7,10 +7,11 @@ import { TrailService } from '../../services/trail.service'
   styleUrls: ['countries.component.css']
 })
 
-
 export class CountriesComponent implements OnInit {
   continents: any[]
-  showMore: boolean
+  showedMore: boolean = false
+  @ViewChild('listContinents')
+  listContinents: ElementRef
 
   constructor(private trailServ: TrailService) {
     this.continents = []
@@ -18,9 +19,25 @@ export class CountriesComponent implements OnInit {
 
   ngOnInit() {
     this.trailServ.getCountries().subscribe((res) => {
+      console.log(res)
       this.groupCountries(res)
-    },
-      (error) => console.log(error))
+    },(error) => console.log(error))
+  }
+
+  showMoreCountries() {
+    this.showedMore = true;
+    //show all countries
+    for(let i=0; i < this.listContinents.nativeElement.children.length; i++ ) {
+      this.listContinents.nativeElement.children.item(i).style['display']="block"
+    }
+  }
+
+  showLessCountries() {
+    this.showedMore = false;
+    //show only the first two elements
+    for(let i=2; i < this.listContinents.nativeElement.children.length; i++ ) {
+      this.listContinents.nativeElement.children.item(i).style['display']="none"
+    }
   }
 
   private groupCountries(array: any[]){

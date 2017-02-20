@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
+import { SearchVariant } from '../models/search_variant.model'
 import { TrailService } from '../services/trail.service'
 import { Observable } from 'rxjs/Rx';
 
@@ -12,29 +13,30 @@ export class SearchComponent implements OnInit {
     @ViewChild('searchInput')
     searchInput: ElementRef;
     inputValue: string;
-    searchVarians: any[]
+    searchVarians: SearchVariant[]
 
     constructor(private trailServ: TrailService) {
         this.searchVarians = []
     }
 
     ngOnInit() {
-       //set event on input in search field
+        //set event on input in search field
         const eventStream = Observable.fromEvent(this.searchInput.nativeElement, 'keyup')
             .map(() => this.inputValue)
             .debounceTime(200)  //set delay for input
             .distinctUntilChanged();
 
-        eventStream.subscribe(input => {
-            console.log(input)
-            if (!input)
-                this.searchVarians = []
-            else {
-                this.trailServ.searchTrails(input).subscribe((res) => {
-                    this.searchVarians = res
-                    console.log(res)
-                }, (err) => console.log(err))
-            }
-        });
+        eventStream.subscribe((input) => {
+            this.searchVarians = []
+            this.trailServ.searchTrails(input).subscribe((res) => {
+                res.map((item) => {
+                    let variant = <SearchVariant>item
+                    //parse type variant route
+                    variant.isCountryside = JSON.parse(item.is_countryside)
+                    this.searchVarians.push(<SearchVariant>item)
+                })
+            }, (err) => console.log(err))
+        }
+        );
     }
 }

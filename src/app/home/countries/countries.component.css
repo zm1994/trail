@@ -3,6 +3,10 @@
   margin-right: 0px;
 }
 
+.hide {
+  display: none;
+}
+
 @media only screen
 and (max-width: 759px) {
   .countries-wrapper {
@@ -26,6 +30,8 @@ and (max-width: 759px) {
   .country {
     margin-top: 7px;
     margin-left: -5px;
+    font-size: initial;
+    font-weight: initial;
   }
 
   .country:last-of-type {
@@ -40,6 +46,21 @@ and (max-width: 759px) {
   .col-xs-12 {
     padding-left: 0px;
     margin-left: 0px;
+  }
+
+  .col-xs-6:nth-of-type(2n) {
+    padding-left: 29px;
+  }
+
+  .continents>li:nth-of-type(1n+3) {
+    display: none;
+  }
+
+  .btn-link{
+    border-top: 1px solid #dddddd;
+    color: #0079ff;
+    padding-top: 14px;
+    font-weight: bold;
   }
 }
 
