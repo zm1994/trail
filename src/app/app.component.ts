@@ -8,15 +8,8 @@ import { TrailService } from './services/trail.service'
 
 })
 export class AppComponent {
-  title = 'app works!';
 
-  constructor(private trailServ: TrailService) {}
 
-  getTrails() {
-    console.log('click')
-    this.trailServ.searchTrails('test')
-      .subscribe((res) => console.log(res),
-                 (err) => console.log(err))
-  }
+  constructor() {}
 
 }

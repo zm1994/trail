@@ -8,9 +8,10 @@ import { Component, OnInit } from '@angular/core'
 
 
 export class HomeComponent implements OnInit {
-    numberBackgroundImage: Number
-    
+    numberBackgroundImage: Number;
+
     constructor() {
+      //get random background image
         this.numberBackgroundImage = Math.floor(Math.random() * 3) + 1
     }
 

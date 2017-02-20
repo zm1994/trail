@@ -32,41 +32,16 @@ pool.connect(function(err, client) {
   });
 })
 
-// exports.app = app;
 exports.pool_connection = pool;
 
-var trail = require('./server/trail_routes')
-app.get("/api/test", function(req, res) {
-  pool.query('SELECT *FROM countries', function(err, result) {
-    if(err)
-      res.send(err.message || error)
-    else 
-      res.send(result)
-  });
-});
-
-// app.get("/api/search/", trail.searchTrail)
-app.get("/api/search/", trail.searchTrail)
-
-// app.get('api/search/:search',  function(req, res) {
-//     var search_param = '%' + req.params.search + '%'
-//     pool.query("select id, name from trails where lower(name) like $1", [search_param], function(err, client) {
-//         if(err) 
-//             res.send(err.message || err)
-//         else {
-//             res.send(client.rows)
-//         }
-//     })
-// })
-
-
-// app.get("/api/search/:search", function(req, res) {
-//   var search_param = '%' + req.params.search + '%'
-//     pool.query("SELECT id, name FROM trails WHERE lower(name) like $1",[search_param], function(err, client) {
-//         if(err) 
-//             res.send(err.message || err)
-//         else {
-//             res.send(client.rows)
-//         }
-//     })
+var trail = require('./server/trail_api')
+// app.get("/api/test", function(req, res) {
+//   pool.query('SELECT *FROM countries', function(err, result) {
+//     if(err)
+//       res.send(err.message || error)
+//     else
+//       res.send(result)
+//   });
 // });
+
+app.get("/api/search/", trail.searchTrail);

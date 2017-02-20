@@ -19,21 +19,22 @@ export class SearchComponent implements OnInit {
     }
 
     ngOnInit() {
-        // const eventStream = Observable.fromEvent(this.searchInput.nativeElement, 'keyup')
-        //     .map(() => this.inputValue)
-        //     .debounceTime(200)
-        //     .distinctUntilChanged();
+       //set event on input in search field
+        const eventStream = Observable.fromEvent(this.searchInput.nativeElement, 'keyup')
+            .map(() => this.inputValue)
+            .debounceTime(200)  //set delay for input
+            .distinctUntilChanged();
 
-        // eventStream.subscribe(input => {
-        //     console.log(input)
-        //     if (!input)
-        //         this.searchVarians = []
-        //     else {
-        //         this.trailServ.searchTrails(input).subscribe((res) => {
-        //             this.searchVarians = res
-        //             console.log(res)
-        //         }, (err) => console.log(err))
-        //     }
-        // });
+        eventStream.subscribe(input => {
+            console.log(input)
+            if (!input)
+                this.searchVarians = []
+            else {
+                this.trailServ.searchTrails(input).subscribe((res) => {
+                    this.searchVarians = res
+                    console.log(res)
+                }, (err) => console.log(err))
+            }
+        });
     }
 }

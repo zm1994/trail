@@ -3,20 +3,13 @@
     <div class="form-group">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2">
             <span class="glyphicon glyphicon-search"></span>
-            <input type="search" class="form-control" placeholder="Enter your location">
-        </div>
-
-    </div>
-    <!--<div class="form-group">
-        <div class="icon-addon addon-lg">
-            <input type="search" #searchInput class="input-large form-control" placeholder="Enter your location" id="search_input" [(ngModel)]="inputValue">
-            <label for="search_input" class="glyphicon glyphicon-search" rel="tooltip" title="email"></label>
-        </div>
-        <div class="list-group">
+            <input type="search" class="form-control" placeholder="Enter your location" #searchInput [(ngModel)]="inputValue">
+          <div class="list-group">
             <a *ngFor="let variant of searchVarians" class="list-group-item list-group-item-action"
                [routerLink]="['/trail', variant.id]">
-                {{variant.name}}
+              {{variant.name}}
             </a>
+          </div>
         </div>
-    </div>-->
+    </div>
 </section>
