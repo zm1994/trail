@@ -1,0 +1,137 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.navbar {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
+    color: white;
+}
+
+.logo {
+    color: inherit;
+}
+
+.search {
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@media only screen  
+  and (max-width: 759px) {
+
+      .search {
+        height: 287px;
+      }
+
+      .navbar {
+        padding-top: 7px;
+      }
+
+      .glyphicon-plus {
+        font-size: 17px;
+        padding: 8px 10px 10px 24px;
+      }
+
+      .create_trail {
+          background: transparent;
+          color: inherit;
+      }
+
+      .create_trail>a div {
+          color: transparent;
+      }
+
+      .logo {
+        font-size: 19px;
+        line-height: 35px;
+        margin-left: -47px;
+    }
+
+      .join_us {
+          display: none;
+      }
+  }
+
+  @media only screen
+    and (min-width: 760px) {
+        .search {
+            height: 439px;
+        }
+
+        .navbar {
+                padding-top: 9px;
+        }
+        .create_trail {
+            padding-top: 8px;
+        }
+       .create_trail>a div {
+          color: inherit;
+          display: inline-block;
+          padding-left: 12px;
+      }
+
+      .logo {
+          font-size: 23px;
+          margin-left: -67px;
+      }
+
+      .join_us a {
+          color: inherit;
+          margin-left: 49px;
+          margin-top: 4px;
+          display: block;
+      }
+
+  }
+
+  @media only screen
+    and (min-width: 995px) {
+        .create_trail {
+            background: #1d872e;
+            width: 151px;
+            margin-left: 66px;
+            height: 42px;
+         }
+
+         .create_trail a {
+            margin-top: 4px;
+            width: 100%;
+            margin-left: 3px;
+            display: block;
+            height: 41px;
+         }
+
+         .logo {
+            font-size: 23px;
+            display: flex;
+            margin-top: 6px;
+            margin-left: 16px;
+         }
+
+         .join_us {
+            width: 136px;
+            margin-top: 5px;
+            font-size: 15px;
+            padding-right: 17px;
+            margin-left: -18px;
+         }
+
+         .join_us a {
+            color: inherit;
+            margin-left: 49px;
+            margin-top: 4px;
+            display: block;
+         }
+
+         .search {
+             height: 675px;
+         }
+    } 

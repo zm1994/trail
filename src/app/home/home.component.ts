@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 
 @Component({
     selector: 'home',
@@ -7,8 +7,16 @@ import { Component } from '@angular/core'
 })
 
 
-export class HomeComponent {
-    constructor(){}
-
+export class HomeComponent implements OnInit {
+    numberBackgroundImage: Number
     
+    constructor() {
+        this.numberBackgroundImage = Math.floor(Math.random() * 3) + 1
+    }
+
+
+    ngOnInit() {
+
+    }
+
 }

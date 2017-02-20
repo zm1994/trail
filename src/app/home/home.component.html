@@ -1,10 +1,19 @@
-<main class="container-fluid">
-    <section class="search" >
-        <nav class="navbar navbar-default">
-            <a routerLink='/' class="navbar-link navbar-left">OUTDOOR.ROCKS</a>
-            <button class="navbar-btn navbar-right">CREATE TAIL</button>
-            <a routerLink='/' class="navbar-link navbar-right">join us</a>
+<main>
+    <div class="search" [style.background-image]="'url(../assets/images/background_' + numberBackgroundImage + '.jpg)'">
+        <nav class="navbar">
+            <div class="col-xs-2 col-sm-3 col-md-2 col-md-push-9 create_trail">
+                <a href="#">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <div>CREATE TAIL</div>
+                </a>
+            </div>
+            <div class="col-xs-10 col-sm-7 col-md-8 col-md-pull-2 text-center">
+                <a href="/" class="logo">OUTDOOR.ROCKS</a>
+            </div>
+            <div class="col-xs-0 col-sm-2 col-md-2 col-md-push-1 join_us">
+                <a routerLink='/'>join us</a>
+            </div>
         </nav>
         <search></search>
-    </section>
+    </div>
 </main>

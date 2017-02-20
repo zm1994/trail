@@ -7,7 +7,12 @@
     margin-right: 0px;
 }
 
-.containder-fluid {
-    padding-left: 0;
-    padding-right: 0;
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+navbar {
+    background: transparent;
+    border: none;
 }
