@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
+import {Component, ElementRef, OnInit, ViewChild, TemplateRef} from '@angular/core'
 import { SearchVariant } from '../models/search_variant.model'
 import { TrailService } from '../services/trail.service'
 import { Observable } from 'rxjs/Rx';
@@ -10,6 +10,10 @@ import { Observable } from 'rxjs/Rx';
 })
 
 export class SearchComponent implements OnInit {
+    public selected:string;
+  @ViewChild('customItemTemplate')
+  customItemTemplate: TemplateRef<any>;
+
     @ViewChild('searchInput')
     searchInput: ElementRef;
     inputValue: string;

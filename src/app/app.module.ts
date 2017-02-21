@@ -16,7 +16,7 @@ import { SearchComponent } from './search/search.component'
 import { TrailComponent } from './trail/trail.component'
 
 import { TrailService } from './services/trail.service'
-
+import { TypeaheadModule } from 'ng2-bootstrap';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { TrailService } from './services/trail.service'
     ProgressbarModule.forRoot(),
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
-
+    TypeaheadModule.forRoot()
   ],
   providers: [TrailService],
   bootstrap: [AppComponent]

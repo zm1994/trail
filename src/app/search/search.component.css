@@ -8,7 +8,7 @@ input {
 }
 
 .form-group {
-    padding: 5px 9px 5px 9px;
+    padding-top: 5px;
     margin-bottom: 15px;
     min-height: 100px;
 }
@@ -43,6 +43,11 @@ input {
 
 .variant_name {
     font-weight: bold;
+    color: #000000;
+}
+
+.variant_length {
+    color: #888888;
 }
 
 .variant_icon {
@@ -54,7 +59,7 @@ input {
 }
 
 
-@media only screen  
+@media only screen
   and (max-width: 759px) {
     .search_wrapper {
         margin-top: 30px;
@@ -74,8 +79,15 @@ input {
     }
 
     .glyphicon-search {
-        top: 13px;
+        top: 15px;
         left: 10px;
+    }
+
+    .variants_trails {
+      position: absolute;
+      z-index: 2;
+      width: inherit;
+      padding-right: 29px;
     }
 
     .variant_icon {
@@ -86,7 +98,11 @@ input {
     }
 
     .list-group-item {
-        height: 41px;
+        min-height: 49px;
+    }
+
+    .variant_length {
+      font-size: 12px;
     }
 }
 
@@ -102,8 +118,6 @@ input {
 
     input {
         height: 61px;
-        /*width: 107%;
-        margin-left: -15px;*/
         position: relative;
         padding-left: 20px;
         padding-top: 10px;
@@ -112,14 +126,18 @@ input {
     .glyphicon-search {
         top: 26px;
         font-size: 20px;
-        left: 445px;
+        left: 94%;
         z-index: 1;
     }
-    
+
+    .list-group-item {
+      min-height: 54px;
+    }
+
 
     ::-webkit-input-placeholder {
         font-size: 20px !important;
-    }   
+    }
 
     :-moz-placeholder { /* Firefox 18- */
       font-size: 20px !important;

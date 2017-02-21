@@ -24,7 +24,7 @@ a {
     background-size: cover;
 }
 
-@media only screen  
+@media only screen
   and (max-width: 759px) {
 
       .search {
@@ -134,4 +134,37 @@ a {
          .search {
              height: 675px;
          }
-    } 
+    }
+
+@media only screen
+  and(min-width: 996px)
+  and(max-width: 1466px) {
+  .logo {
+    margin-left: 7%;
+  }
+
+  .create_trail {
+    margin-left: -1%;
+  }
+
+}
+
+@media only screen
+  and (min-width: 1477px){
+  .create_trail {
+    margin-left: 5%;
+  }
+
+  .logo {
+    margin-left: 13%;
+  }
+
+  .join_us {
+    margin-left: -4%;
+  }
+
+  .glyphicon_search {
+    left: 97%;
+  }
+
+}
