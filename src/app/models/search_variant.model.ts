@@ -1,5 +1,6 @@
 export class SearchVariant {
     id: Number;
     name: String;
-    isCountryside: Boolean;
+    is_trail: Boolean;
+    length: String;
 }

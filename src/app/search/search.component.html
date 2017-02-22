@@ -6,9 +6,9 @@
             <input type="search" class="form-control" placeholder="Enter your location" #searchInput [(ngModel)]="inputValue">
           <div class="list-group col-xs-12 variants_trails">
             <a *ngFor="let variant of searchVarians" class="list-group-item list-group-item-action"
-               [routerLink]="['/trail', variant.id]">
+               (click)="onSelectVariant(variant)">
                <span class="variant_icon col-xs-2 col-sm-2 col-md-2"
-                    [class.walkman]="!!variant.is_countryside" [class.globe]="!variant.is_countryside"></span>
+                    [class.walkman]="variant.is_trail" [class.globe]="!variant.is_trail"></span>
                <div class="col-xs-10 col-sm-10 col-md-10 variant_name">{{variant.name}}</div>
                <div *ngIf="variant.length" class="col-xs-10 col-sm-10 col-md-10 variant_length">Length: {{variant.length}} km</div>
             </a>

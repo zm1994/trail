@@ -43,6 +43,9 @@ input {
 
 .variant_name {
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: #000000;
 }
 

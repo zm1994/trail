@@ -44,11 +44,9 @@ export class CountriesComponent implements OnInit {
     var groupedArray = {};
     //iterate through each element of array
     array.forEach(function(val) {
-      var curr = groupedArray[val.continent]
+      var currentContinent = groupedArray[val.continent]
       //if array key doesnt exist, init with empty array
-      if (!curr) {
-        groupedArray[val.continent] = [];
-      }
+      if (!currentContinent) groupedArray[val.continent] = [];
       //append color to this key
       groupedArray[val.continent].push(val.country);
     });

@@ -97,14 +97,14 @@ a {
         .create_trail {
             background: #1d872e;
             width: 151px;
-            margin-left: 66px;
+            margin-left: -3%;
             height: 42px;
          }
 
          .create_trail a {
             margin-top: 4px;
             width: 100%;
-            margin-left: 3px;
+            margin-left: 1%;
             display: block;
             height: 41px;
          }
@@ -113,7 +113,7 @@ a {
             font-size: 23px;
             display: flex;
             margin-top: 6px;
-            margin-left: 16px;
+            margin-left: 12%;
          }
 
          .join_us {
@@ -121,14 +121,7 @@ a {
             margin-top: 5px;
             font-size: 15px;
             padding-right: 17px;
-            margin-left: -18px;
-         }
-
-         .join_us a {
-            color: inherit;
-            margin-left: 49px;
-            margin-top: 4px;
-            display: block;
+            margin-left: -5%;
          }
 
          .search {
