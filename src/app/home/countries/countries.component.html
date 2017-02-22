@@ -1,4 +1,4 @@
-<section class="countries-wrapper">
+<section class="countries-wrapper hidden-md hidden-lg">
   <ul #listContinents class="continents list-unstyled">
     <li class="col-xs-12 continent" *ngFor="let continent of continents">
       {{continent.continent}}
@@ -12,7 +12,21 @@
       </ul>
     </li>
   </ul>
+  <button *ngIf="!showedMore" class="btn-link col-xs-12 text-center" (click)="showMoreCountries()">Show all</button>
+  <button *ngIf="showedMore" class="btn-link col-xs-12 text-center" (click)="showLessCountries()">Show less</button>
 </section>
-<button *ngIf="!showedMore" class="btn-link col-xs-12 text-center" (click)="showMoreCountries()">Show all</button>
-<button *ngIf="showedMore" class="btn-link col-xs-12 text-center" (click)="showLessCountries()">Show less</button>
-  
+<tabset class="hidden-xs hidden-sm">
+  <tab *ngFor="let continent of continents"
+       [heading]="continent.continent"
+       [customClass]="continent_tabs">
+    <ul class="list-unstyled countries">
+      <li *ngFor="let country of continent.countries"
+          class="country" [class.col-xs-12]="continent.countries.length < 3"
+          [class.col-xs-6]="continent.countries.length > 2"
+          [class.col-sm-6]="continent.countries.length > 3 && continent.countries.length < 6"
+          [class.col-sm-3]="continent.countries.length > 6">{{country}}
+      </li>
+    </ul>
+  </tab>
+</tabset>
+

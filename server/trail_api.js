@@ -15,7 +15,7 @@ exports.searchTrail = function(req, res) {
 
 
 exports.getCountries = function(req, res){
-  pool.query("Select *from show_countries", function(err, client) {
+  pool.query("Select * from show_countries_extended", function(err, client) {
     if(err)
       res.status(500).send(err.message || err)
     else {

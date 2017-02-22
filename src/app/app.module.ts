@@ -8,6 +8,7 @@ import { CollapseModule } from 'ng2-bootstrap';
 import { ProgressbarModule } from 'ng2-bootstrap'
 import { RouterModule } from '@angular/router'
 import { ROUTES } from './routes'
+import { TabsModule } from 'ng2-bootstrap';
 
 import { AppComponent } from './app.component';
 import { CountriesComponent } from './home/countries/countries.component'
@@ -16,7 +17,6 @@ import { SearchComponent } from './search/search.component'
 import { TrailComponent } from './trail/trail.component'
 
 import { TrailService } from './services/trail.service'
-import { TypeaheadModule } from 'ng2-bootstrap';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { TypeaheadModule } from 'ng2-bootstrap';
     ProgressbarModule.forRoot(),
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
-    TypeaheadModule.forRoot()
+    TabsModule.forRoot()
   ],
   providers: [TrailService],
   bootstrap: [AppComponent]
