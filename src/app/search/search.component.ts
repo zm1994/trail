@@ -36,7 +36,8 @@ export class SearchComponent implements OnInit {
             .distinctUntilChanged();
 
         eventStream.subscribe((input) => {
-            this.trailServ.searchTrails(input, true).subscribe((res) => {
+            if(!!input) 
+                this.trailServ.searchTrails(input, true).subscribe((res) => {
                 this.searchVarians = <SearchVariant[]>res
             }, (err) => console.log(err))
         });

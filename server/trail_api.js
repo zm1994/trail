@@ -4,7 +4,7 @@ var pool = server.pool_connection
 //get trail names by search params
 //req.query.complex - is parameter for search not only trails but countries regions, continents
 exports.searchTrail = function(req, res) {
-    pool.query('SELECT * From search_trail($1, $2) order by name asc limit(10)',
+    pool.query('SELECT * From search_trail($1, $2) order by name asc limit(5)',
          [req.query.param, !!req.query.complex], function(err, client) {
         if(err)
             res.status(500).send(err.message || err)

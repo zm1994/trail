@@ -3,70 +3,75 @@
   margin-right: 0px;
 }
 
+.countries-wrapper {
+  min-height: 169px;
+  padding-top: 16px;
+  background: white;
+}
+
+.continents {
+  background-color: inherit
+}
+
+.countries {
+  padding: 5px 5px 5px 5px;
+}
+
+.continent {
+  font-weight: bold;
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 3%;
+  padding-right: 1%;
+  background-color: inherit;
+}
+
 .continent:nth-of-type(1n+3) {
   display: none;
 }
 
-/*@media only screen
-and (max-width: 759px) {*/
-  .countries-wrapper {
-    min-height: 169px;
-    padding-top: 16px;
-    padding-left: 20px;
-  }
+.country {
+  margin-top: 7px;
+  margin-left: -3px;
+  font-size: initial;
+  font-weight: initial;
+}
 
-  .countries {
-    padding: 5px 5px 5px 5px;
-  }
+.col-xs-6 {
+  padding-left: 0px;
+}
 
-  .continent {
-    font-weight: bold;
-    font-size: 17px;
-    margin-left: 7px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
+.col-xs-12 {
+  padding-left: 4%;
+}
 
-  .country {
-    margin-top: 7px;
-    margin-left: -5px;
-    font-size: initial;
-    font-weight: initial;
-  }
+.col-xs-6:nth-of-type(2n) {
+  padding-left: 29px;
+}
 
-  .col-xs-6 {
-    padding-left: 0px;
-    margin-left: -4px;
-  }
-
-  .col-xs-12 {
-    padding-left: 0px;
-    margin-left: 0px;
-  }
-
-  .col-xs-6:nth-of-type(2n) {
-    padding-left: 29px;
-  }
-
-  .btn-link{
-    border-top: 1px solid #dddddd;
-    color: #0079ff;
-    padding-top: 14px;
-    font-weight: bold;
-  }
-/*}*/
+.btn-link{
+  border-top: 1px solid #dddddd;
+  color: #0079ff;
+  padding-top: 14px;
+  font-weight: bold;
+  background: inherit;
+}
 
 @media only screen
   and (min-width: 760px) {
     .countries-wrapper {
       padding-top: 26px;
-      padding-left: 42px;
+      margin-left: 3%;
+      margin-right: 3%;
     }
 
     .continent {
       font-size: 19px;
       padding-top: 10px;
       padding-bottom: 12px;
+      padding-left: 2%;
+      padding-right: 2%;
     }
 
     .countries {
@@ -74,10 +79,27 @@ and (max-width: 759px) {*/
     }
   }
 
+  .custom_tab {
+    border-bottom: 2px solid #209734;
+  }
+
 @media only screen
   and (min-width: 1000px) {
-  .continent_tabs {
+  
+  .countries_wrapper_desktop {
+    margin-top: -21%;
+    background: white;
+    min-height: 327px;
+  }
+
+  .custom_tab {
+    border-bottom: 2px solid #209734;
+  }
+  .nav-tabs>li>a, .nav-tabs>li.active>a {
     border: none;
+  }
+  .nav-tabs>li.active>a {
+    border-bottom: 2px solid #209734;
   }
 }
 
