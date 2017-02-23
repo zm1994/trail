@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
     @ViewChild('searchInput')
     searchInput: ElementRef;
     inputValue: string;
-    searchVarians: SearchVariant[]
+    searchVarians: SearchVariant[];
 
     constructor(
         private trailServ: TrailService,
@@ -25,7 +25,6 @@ export class SearchComponent implements OnInit {
     onSelectVariant(item: SearchVariant) {
        console.log(item)
        if(item.is_trail) this.router.navigate(['/trail', item.id])
-       
     }
 
     ngOnInit() {
@@ -36,10 +35,11 @@ export class SearchComponent implements OnInit {
             .distinctUntilChanged();
 
         eventStream.subscribe((input) => {
-            if(!!input) 
+            if(!!input)
                 this.trailServ.searchTrails(input, true).subscribe((res) => {
-                this.searchVarians = <SearchVariant[]>res
-            }, (err) => console.log(err))
+                  this.searchVarians = <SearchVariant[]>res
+                }, (err) => console.log(err))
+            else this.searchVarians = []
         });
     }
 }

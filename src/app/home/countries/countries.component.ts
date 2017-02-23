@@ -20,7 +20,7 @@ export class CountriesComponent implements OnInit {
 
   ngOnInit() {
     this.trailServ.getCountries().subscribe((res) => {
-      console.log(res)
+      // group result in object structure {continents: [{name: '', countries: [{name: '', regions: [{name: ''}]}]}]}
       this.colectionGeographicObjects = this.groupCountries(res)
       console.log(this.colectionGeographicObjects)
     },(error) => console.log(error))

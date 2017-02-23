@@ -22,12 +22,12 @@
     </li>
   </ul>
   <div class="tab-content">
-    <div *ngFor="let continent of colectionGeographicObjects.continents; let i=index" id="{{i}}" 
+    <div *ngFor="let continent of colectionGeographicObjects.continents; let i=index" id="{{i}}"
           [class.active]="i==0" [class.in]="i==0" class="tab-pane fade">
       <ul class="list-unstyled countries col-md-12 col-md-12">
         <li *ngFor="let country of continent.countries" class="country col-md-12 col-lg-12">{{country.name}}
           <ul class="list-unstyled regions">
-            <li *ngFor="let region of country.regions" class="col-md-3 col-lg-3">
+            <li *ngFor="let region of country.regions" class="col-md-3 col-lg-3 region">
               {{region.name}}
             </li>
           </ul>
@@ -36,5 +36,5 @@
     </div>
   </div>
 </section>
- 
+
 

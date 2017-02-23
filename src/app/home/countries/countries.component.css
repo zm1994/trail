@@ -7,6 +7,7 @@
   min-height: 169px;
   padding-top: 16px;
   background: white;
+  overflow: hidden;
 }
 
 .continents {
@@ -53,8 +54,9 @@
 .btn-link{
   border-top: 1px solid #dddddd;
   color: #0079ff;
-  padding-top: 14px;
+  padding-top: 5px;
   font-weight: bold;
+  height: 45px;
   background: inherit;
 }
 
@@ -90,16 +92,60 @@
     margin-top: -104px;
     background: white;
     min-height: 327px;
+    padding: 54px 5px 5px 63px;
   }
 
   .custom_tab {
     border-bottom: 2px solid #209734;
   }
+  .nav-tabs {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    border-bottom: none;
+  }
+
+  .nav-tabs>li>a {
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 0px;
+    padding-bottom: 14px;
+    margin-right: 33px;
+  }
+
   .nav-tabs>li>a, .nav-tabs>li.active>a {
     border: none;
+    color: inherit;
   }
   .nav-tabs>li.active>a {
-    border-bottom: 2px solid #209734;
+    border-bottom: 3px solid #209734;
+    color: #209734;
+  }
+
+  .countries {
+    padding: 0px;
+    margin-top: 31px;
+  }
+
+  .country {
+    margin-left: 0px;
+    padding: 0px;
+    font-size: initial;
+    font-weight: bold;
+  }
+
+  .regions {
+    padding-left: 0;
+    margin-bottom: 34px;
+    padding-top: 15px;
+  }
+
+  .region {
+    color: initial;
+    font-size: 14px;
+    font-weight: initial;
+    padding-left: 0px;
+    line-height: 14px;
   }
 }
 

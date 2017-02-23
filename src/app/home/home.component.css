@@ -24,8 +24,11 @@ a {
     background-size: cover;
 }
 
-body {
-    background-color: #f5f5f5;
+.dotted_block {
+  margin-top: 36px;
+  border: 3px solid #cccccc;
+  border-style: dashed;
+  height: 88px;
 }
 
 @media only screen
