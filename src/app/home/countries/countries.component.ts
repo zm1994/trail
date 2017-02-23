@@ -46,10 +46,7 @@ export class CountriesComponent implements OnInit {
      let continents = {};
      let countries = {};
      let regions = {};
-     let hashContinents = {
-      continents: []
-    }
-    return array.reduce((res, reg) => {
+     return array.reduce((res, reg) => {
           if (!res.continents) res.continents = [];
           if (!continents[reg.continent]) {
                let continent = {name: reg.continent, countries: []};

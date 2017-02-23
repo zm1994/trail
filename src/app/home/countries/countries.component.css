@@ -85,9 +85,9 @@
 
 @media only screen
   and (min-width: 1000px) {
-  
+
   .countries_wrapper_desktop {
-    margin-top: -21%;
+    margin-top: -104px;
     background: white;
     min-height: 327px;
   }
