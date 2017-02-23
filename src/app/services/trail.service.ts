@@ -28,4 +28,22 @@ export class TrailService {
                     .map((res) => res.json())
                     .catch((error) => Observable.throw(error.json() || 'Server error'))
     }
+
+    getFeaturedTrails(count: Number, offset: Number) {
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('featured', 'true');
+        params.set('offset', offset.toString());
+        params.set('count', count.toString())
+        return this.http.get('/api/trail/', { search: params })
+                    .map((res) => res.json())
+                    .catch((error) => Observable.throw(error.json() || 'Server error'))
+    }
+
+    getCountTrails(isFeatured: Boolean) {
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('featured', isFeatured.toString());
+        return this.http.get('/api/trail/count/', { search: params })
+                    .map((res) => res.json())
+                    .catch((error) => Observable.throw(error.json() || 'Server error'))
+    }
 }

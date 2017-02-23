@@ -12,19 +12,14 @@ import { Observable } from 'rxjs/Rx';
 
 export class SearchComponent implements OnInit {
     @ViewChild('searchInput')
-    searchInput: ElementRef;
-    inputValue: string;
-    searchVarians: SearchVariant[];
+    private searchInput: ElementRef;
+    private inputValue: string;
+    private searchVarians: SearchVariant[];
 
     constructor(
         private trailServ: TrailService,
         private router: Router) {
         this.searchVarians = []
-    }
-
-    onSelectVariant(item: SearchVariant) {
-       console.log(item)
-       if(item.is_trail) this.router.navigate(['/trail', item.id])
     }
 
     ngOnInit() {
@@ -41,5 +36,10 @@ export class SearchComponent implements OnInit {
                 }, (err) => console.log(err))
             else this.searchVarians = []
         });
+    }
+
+    private onSelectVariant(item: SearchVariant) {
+       console.log(item)
+       if(item.is_trail) this.router.navigate(['/trail', item.id])
     }
 }

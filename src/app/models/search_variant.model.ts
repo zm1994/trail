@@ -1,6 +1,6 @@
 export class SearchVariant {
-    id: Number;
-    name: String;
-    is_trail: Boolean;
-    length: String;
+    id: number;
+    name: string;
+    is_trail: boolean;
+    length: string;
 }

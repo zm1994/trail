@@ -7,17 +7,11 @@ import { Component, OnInit } from '@angular/core'
 })
 
 
-export class HomeComponent implements OnInit {
-    numberBackgroundImage: Number;
+export class HomeComponent {
+    private numberBackgroundImage: number;
 
     constructor() {
       //get random background image
         this.numberBackgroundImage = Math.floor(Math.random() * 3) + 1
     }
-
-
-    ngOnInit() {
-
-    }
-
 }
