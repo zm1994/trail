@@ -15,7 +15,7 @@ export class TrailService {
     searchTrails(name: string, isComplex: boolean = false) {
         let params: URLSearchParams = new URLSearchParams();
         params.set('param', name);
-        if (isComplex) params.set('complex', 'true') 
+        if (isComplex) params.set('complex', 'true')
         return this.http.get('/api/search/', { search: params })
             .map((res) => {
                 return res.json()
