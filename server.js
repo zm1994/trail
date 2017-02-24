@@ -47,3 +47,5 @@ app.get("/api/search/", trail.searchTrail);
 app.get('/api/countries', trail.getCountries);
 
 app.get('/api/trail/', trail.getTrails);
+
+app.get('/api/trail/count/', trail.getCountTrails)

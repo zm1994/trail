@@ -20,14 +20,18 @@ exports.getTrails = function(req, res) {
     getFeaturedTrails(req, res);
   else {
     console.log(req.query.id)
-    pool.query('Select * from show_trails where id=($1) limit(1)',[req.query.id],
+    pool.query('Select * from show_trails where id=$1 limit(1)', [req.query.id],
       function(error, client){ handleResponse(error, client, res) })
   }
-
 }
 
-getFeaturedTrails = function (req, res) {
-  console.log(req.query.featured)
-  pool.query("Select * from show_trails where is_featured is ($1) offset($2)", [req.query.featured, req.query.offset],
+function getFeaturedTrails(req, res) {
+  pool.query("Select * from show_trails where is_featured=$1 offset($2) limit($3)", 
+      [req.query.featured, req.query.offset, req.query.count],
     function(error, client){ handleResponse(error, client, res) })
 };
+
+exports.getCountTrails = function(req, res) {
+    pool.query("Select COUNT(*) from trails where is_featured=$1", [req.query.featured], 
+        function(error, client){ handleResponse(error, client, res) })
+}

@@ -8,13 +8,14 @@ import {Md5} from 'ts-md5/dist/md5';
 })
 
 
-export class HomeComponent implements OnInit {
-    numberBackgroundImage: Number;
+export class HomeComponent {
+    private numberBackgroundImage: number;
 
     constructor(private md5: Md5) {
       //get random background image
         this.numberBackgroundImage = Math.floor(Math.random() * 3) + 1
     }
+<<<<<<< HEAD
 
 
     ngOnInit() {
@@ -22,4 +23,6 @@ export class HomeComponent implements OnInit {
 
     }
 
+=======
+>>>>>>> c2093b82f7cdef0fd1906a75266c11bbab65121f
 }

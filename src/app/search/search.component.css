@@ -35,11 +35,11 @@ input {
  }
 
 .walkman {
-    background: url('../../assets/images/walkman_icon.jpg')
+    background: url('../../assets/icons/walkman_icon.jpg')
 }
 
 .globe {
-    background: url('../../assets/images/earth-globe.png')
+    background: url('../../assets/icons/earth-globe.png')
 }
 
 .variant_name {

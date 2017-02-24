@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core'
 import { TrailService } from '../../services/trail.service'
-import { Continent }  from '../../models/continent.model'
+
 
 @Component({
   selector: 'countries',
@@ -9,10 +9,11 @@ import { Continent }  from '../../models/continent.model'
 })
 
 export class CountriesComponent implements OnInit {
-  colectionGeographicObjects: any
-  showedMore: boolean = false
   @ViewChild('listContinents')
-  listContinents: ElementRef
+  private listContinents: ElementRef;
+  private colectionGeographicObjects: any
+  private showedMore: boolean = false
+  
 
   constructor(private trailServ: TrailService) {
     this.colectionGeographicObjects = []
@@ -26,7 +27,7 @@ export class CountriesComponent implements OnInit {
     },(error) => console.log(error))
   }
 
-  showMoreCountries() {
+  private showMoreCountries() {
     this.showedMore = true;
     //show all countries
     for(let i=0; i < this.listContinents.nativeElement.children.length; i++ ) {
@@ -34,7 +35,7 @@ export class CountriesComponent implements OnInit {
     }
   }
 
-  showLessCountries() {
+  private showLessCountries() {
     this.showedMore = false;
     //show only the first two elements
     for(let i=2; i < this.listContinents.nativeElement.children.length; i++ ) {
