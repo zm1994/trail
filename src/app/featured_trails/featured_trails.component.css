@@ -1,4 +1,10 @@
-featured_trail {
+h1 {
+  color: #666666;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.featured_trail {
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;
@@ -8,30 +14,69 @@ featured_trail {
     background-size: cover;
 }
 
+.wrapper_featured_trails {
+  padding-left: 0px;
+  padding-right: 0px;
+  overflow: hidden;
+}
+
 @media only screen
-  and (min-width: 480px) {
-    featured_trail {
-        height: 200px;
-    }
+  and (max-width: 767px) {
+
+  .featured_trail {
+    height: 200px;
+    margin-bottom: 21px;
+    margin-right: 2.008%;
+  }
+
+  .wrapper_featured_trails {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .featured_trail:nth-child(even) {
+    margin-right: 0px;
+  }
+
+  .col-xs-6 {
+    width: 49%;
+  }
 }
 
-@media only screen 
-    and (min-width : 768px) {
-    featured_trail {
-        height: 300px;
-    }
+@media only screen
+  and (min-width : 768px) {
+
+  .wrapper_featured_trails {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .featured_trail {
+    height: 300px;
+    margin-right: 1.5%;
+  }
+
+  .col-lg-4, .col-md-4 {
+    width: 32.33333333%;
+  }
+
+  .featured_trail:nth-child(3n+4) {
+    margin-right: 0px;
+  }
 }
 
-@media only screen 
-    and (min-width : 992px) {
-    featured_trail {
-        height: 300px;
-    }
+@media only screen
+  and (min-width : 992px) {
+
+  .featured_trail {
+    height: 300px;
+  }
 }
 
-@media only screen 
-    and (min-width : 1200px) {
-    featured_trail {
-        height: 300px;
-    }
-}
+/*@media only screen*/
+  /*and (min-width : 1200px) {*/
+
+  /*.featured_trail {*/
+    /*height: 300px;*/
+  /*}*/
+/*}*/

@@ -1,9 +1,12 @@
-<section >
-    <div class="featured_trail col-xs-6 col-sm-4 col-md-4 col-lg-4" 
-        [style.background-image]="'url(' + getBackgroundImage(trail) + ')'"
-        *ngFor="let trail of featuredTrails">
+<section class="wrapper_featured_trails col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+    <h1 class="text-center">Featured trails</h1>
+    <div class="featured_list">
+      <div class="featured_trail col-xs-6 col-sm-4 col-md-4 col-lg-4"
+           [style.background-image]="'url(' + getBackgroundImage(trail) + ')'"
+           *ngFor="let trail of featuredTrails">
         {{trail.id}}
+      </div>
     </div>
-    <button *ngIf="countFeaturedTrails > offset + countTrailsLimit" class="btn" 
+    <button *ngIf="countFeaturedTrails > offset + countTrailsLimit" class="btn"
         (click)="getMoreFeaturedTrails()">MORE</button>
 </section>
