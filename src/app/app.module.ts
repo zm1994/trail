@@ -9,7 +9,6 @@ import { ProgressbarModule } from 'ng2-bootstrap'
 import { RouterModule } from '@angular/router'
 import { ROUTES } from './routes'
 import { TabsModule } from 'ng2-bootstrap';
-import {Md5} from 'ts-md5/dist/md5';
 
 import { AppComponent } from './app.component';
 import { CountriesComponent } from './home/countries/countries.component'
@@ -44,7 +43,7 @@ import { TrailService } from './services/trail.service'
     RouterModule.forRoot(ROUTES),
     TabsModule.forRoot()
   ],
-  providers: [TrailService, Md5],
+  providers: [TrailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

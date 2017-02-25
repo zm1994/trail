@@ -24,6 +24,11 @@ a {
     background-size: cover;
 }
 
+.empty {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
 .dotted_block {
   margin-top: 36px;
   border: 3px solid #cccccc;

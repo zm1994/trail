@@ -20,13 +20,58 @@ h1 {
   overflow: hidden;
 }
 
+.short_details_trail {
+    margin-top: 52px;
+}
+
+.level_trail {
+    background: #1d872e;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.country_trail, .level_trail, .name_trail {
+    color: white;
+    font-weight: bold;
+}
+
+.country_trail, .level_trail, .name_trail, .length_trail {
+    padding: 0px;
+}
+
+.name_trail, .country_trail {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.length_trail {
+    color: #ffcc00;
+}
+
+.short_details_trail {
+    padding: 0px;
+}
+
+.btn_more_featured_trails {
+    background: #dddddd;
+    color: #888888;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 9px;
+    line-height: 13px;
+    border-radius: 0px;
+}
+
 @media only screen
   and (max-width: 767px) {
 
   .featured_trail {
-    height: 200px;
-    margin-bottom: 21px;
-    margin-right: 2.008%;
+    height: 146px;
+    margin-bottom: 2.003%;
+    margin-right: 2.003%;
+
   }
 
   .wrapper_featured_trails {
@@ -41,26 +86,54 @@ h1 {
   .col-xs-6 {
     width: 49%;
   }
+
+  .short_details_trail {
+    margin-top: 47px;
+  }
+
+  .level_trail {
+    margin-top: 7px;
+    margin-left: -4px;
+    width: 44px;
+    padding: 2px 2px 2px 2px;
+    font-size: 10px;
+    height: 17px;
+  }
+
+  .country_trail {
+    font-size: 13px;
+  }
+
+  .name_trail {
+    font-size: 15px;
+    margin-top: 4px;
+  }
+
+  .length_trail {
+    margin-top: 5px;
+    font-size: 11px;
+  }
 }
 
 @media only screen
   and (min-width : 768px) {
 
   .wrapper_featured_trails {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 13px;
+    padding-right: 13px;
   }
 
   .featured_trail {
-    height: 300px;
+    height: 240px;
     margin-right: 1.5%;
+    margin-bottom: 1.5%;
   }
 
   .col-lg-4, .col-md-4 {
     width: 32.33333333%;
   }
 
-  .featured_trail:nth-child(3n+4) {
+  .featured_trail:nth-child(3n) {
     margin-right: 0px;
   }
 }

@@ -3,7 +3,7 @@
   margin-right: 0px;
 }
 
-.countries-wrapper {
+.countries_wrapper {
   min-height: 169px;
   padding-top: 16px;
   background: white;
@@ -62,10 +62,10 @@
 
 @media only screen
   and (min-width: 760px) {
-    .countries-wrapper {
+    .countries_wrapper {
       padding-top: 26px;
-      margin-left: 3%;
-      margin-right: 3%;
+      margin-left: 13px;
+      margin-right: 13px;
     }
 
     .continent {

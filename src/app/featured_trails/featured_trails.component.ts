@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core'
+import { Router } from '@angular/router' 
 import { TrailService } from '../services/trail.service'
 import { Trail } from '../models/trail.model'
 
@@ -15,7 +16,9 @@ export class FeaturedTrails implements OnInit {
     private offset: number;
     private countFeaturedTrails: number;
 
-    constructor(private trailServ: TrailService) {
+    constructor(
+        private trailServ: TrailService,
+        private router: Router) {
         this.offset = 0;
         this.countTrailsLimit = 6;
         this.featuredTrails = [];
@@ -23,7 +26,8 @@ export class FeaturedTrails implements OnInit {
 
     ngOnInit() {
         //get count trails for display button "MORE" if count is more than 6
-        this.trailServ.getCountTrails(true).subscribe((result) => this.countFeaturedTrails = result, 
+        this.trailServ.getCountTrails(true)
+            .subscribe((result) => this.countFeaturedTrails = result[0].count, 
             (error) => console.log(error));
         //get first 6 trails 
         this.getFeaturedTrails()
@@ -31,16 +35,23 @@ export class FeaturedTrails implements OnInit {
 
     private getFeaturedTrails(offset: number = 0) {
         this.trailServ.getFeaturedTrails(this.countTrailsLimit, offset)
-            .subscribe((result) => {
-                console.log(result)
-                this.featuredTrails = <Trail[]>result;
-                console.log(this.featuredTrails)
-            }, (error) => console.log(error))
+            .subscribe((result) => this.featuredTrails = this.featuredTrails.concat(<Trail[]>result),
+            (error) => console.log(error))
     }
 
-    private getMoreFeaturedTrails = () => { this.getFeaturedTrails(this.offset += this.countTrailsLimit)}
+    private getMoreFeaturedTrails() { 
+        this.getFeaturedTrails(this.offset += this.countTrailsLimit)
+    }
 
-    getBackgroundImage(trail: Trail) {
+    private allowedMoreFeaturedTrails() {
+        return this.countFeaturedTrails > this.offset + this.countTrailsLimit
+    }
+
+    private getBackgroundImage(trail: Trail) {
         return !!trail.images && trail.images.length >= 1 ? trail.images[0] : '../../assets/images/default_trail.jpg'
+    }
+
+    private onSelectTrail(id: number) {
+        this.router.navigate(['/trail', id])
     }
 }

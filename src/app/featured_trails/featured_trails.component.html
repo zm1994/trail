@@ -1,12 +1,19 @@
-<section class="wrapper_featured_trails col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
-    <h1 class="text-center">Featured trails</h1>
-    <div class="featured_list">
-      <div class="featured_trail col-xs-6 col-sm-4 col-md-4 col-lg-4"
-           [style.background-image]="'url(' + getBackgroundImage(trail) + ')'"
-           *ngFor="let trail of featuredTrails">
-        {{trail.id}}
+<section class="wrapper_featured_trails col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <h1 class="text-center">Featured trails</h1>
+  <div class="featured_list">
+    <a (click)="onSelectTrail(trail.id)" class="featured_trail col-xs-6 col-sm-4 col-md-4 col-lg-4" 
+      [style.background-image]="'url(' + getBackgroundImage(trail) + ')'"
+      *ngFor="let trail of featuredTrails">
+      <div class="level_trail col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">{{trail.level | uppercase}}</div>
+      <div class="short_details_trail col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="country_trail col-xs-12 col-sm-12 col-md-12 col-lg-12">{{trail.country}}</div>
+        <div class="name_trail col-xs-12 col-sm-12 col-md-12 col-lg-12">{{trail.name}}</div>
+        <div class="length_trail col-xs-12 col-sm-12 col-md-12 col-lg-12">{{trail.length}} KM</div>
       </div>
-    </div>
-    <button *ngIf="countFeaturedTrails > offset + countTrailsLimit" class="btn"
-        (click)="getMoreFeaturedTrails()">MORE</button>
+    </a>
+  </div>
+  <button *ngIf="allowedMoreFeaturedTrails()" 
+      class="btn_more_featured_trails text-center btn col-xs-12 col-sm-12 col-md-12 col-lg-12" 
+      (click)="getMoreFeaturedTrails()">MORE
+      </button>
 </section>

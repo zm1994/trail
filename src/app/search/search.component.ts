@@ -39,7 +39,6 @@ export class SearchComponent implements OnInit {
     }
 
     private onSelectVariant(item: SearchVariant) {
-       console.log(item)
        if(item.is_trail) this.router.navigate(['/trail', item.id])
     }
 }
