@@ -2,6 +2,8 @@ h1 {
   color: #666666;
   font-weight: bold;
   font-size: 20px;
+  margin-bottom: 17px;
+  margin-top: 19px;
 }
 
 .featured_trail {
@@ -14,28 +16,32 @@ h1 {
     background-size: cover;
 }
 
+.featured_trail:hover {
+    cursor: default;
+}
+
 .wrapper_featured_trails {
   padding-left: 0px;
   padding-right: 0px;
   overflow: hidden;
 }
 
-.short_details_trail {
-    margin-top: 52px;
-}
-
 .level_trail {
     background: #1d872e;
-    margin-top: 10px;
-    margin-left: 10px;
-}
+    margin-top: 15px;
+    margin-left: 0px;
+    width: 44px;
+    padding: 2px 2px 2px 2px;
+    font-size: 10px;
+    height: 17px;
+  }
 
 .country_trail, .level_trail, .name_trail {
     color: white;
     font-weight: bold;
 }
 
-.country_trail, .level_trail, .name_trail, .length_trail {
+.country_trail, .name_trail, .length_trail {
     padding: 0px;
 }
 
@@ -62,6 +68,41 @@ h1 {
     padding-top: 9px;
     line-height: 13px;
     border-radius: 0px;
+}
+
+.dog_allowed {
+    background: url('../assets/icons/dog-allowed-white.png');
+}
+
+.good_for_kids {
+    background: url('../assets/icons/good-for-kids-white.png');
+}
+
+.many_days {
+    background: url('../assets/icons/many-days-white.png');
+}
+
+.one_day {
+    background: url('../assets/icons/one-day-white.png');
+}
+
+.dog_allowed, 
+.good_for_kids, 
+.many_days, 
+.one_day, 
+.loop,
+.in-and-out,
+.point-to-point {
+    width: 24px;
+    height: 24px;
+    margin-top: 72px;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
 }
 
 @media only screen
@@ -91,15 +132,6 @@ h1 {
     margin-top: 47px;
   }
 
-  .level_trail {
-    margin-top: 7px;
-    margin-left: -4px;
-    width: 44px;
-    padding: 2px 2px 2px 2px;
-    font-size: 10px;
-    height: 17px;
-  }
-
   .country_trail {
     font-size: 13px;
   }
@@ -117,6 +149,11 @@ h1 {
 
 @media only screen
   and (min-width : 768px) {
+
+  h1 {
+    font-size: 27px;
+  }
+  
 
   .wrapper_featured_trails {
     padding-left: 13px;
@@ -136,6 +173,19 @@ h1 {
   .featured_trail:nth-child(3n) {
     margin-right: 0px;
   }
+
+  .short_details_trail {
+    margin-top: 23px;
+    line-height: 24px;
+  }
+
+  .country_trail {
+    font-weight: normal;
+  }
+
+  .length_trail {
+    font-size: 11px;
+  }
 }
 
 @media only screen
@@ -144,12 +194,36 @@ h1 {
   .featured_trail {
     height: 300px;
   }
+
+  .level_trail {
+    margin-top: 19px;
+    margin-left: 4px;
+    width: 51px;
+    padding: 2px 2px 2px 2px;
+    font-size: 11px;
+  }
+
+  .short_details_trail {
+    margin-top: 34px;
+    padding-left: 7px;
+    line-height: 30px;
+  }
+
+  .name_trail {
+    font-size: 21px;
+  }
+
+  .length_trail {
+    font-size: 13px;
+  }
+
+  .dog_allowed, 
+  .good_for_kids, 
+  .many_days, 
+  .one_day, 
+  .loop,
+  .in-and-out,
+  .point-to-point {
+    margin-top: 92px;
+  }
 }
-
-/*@media only screen*/
-  /*and (min-width : 1200px) {*/
-
-  /*.featured_trail {*/
-    /*height: 300px;*/
-  /*}*/
-/*}*/

@@ -35,7 +35,8 @@ export class FeaturedTrails implements OnInit {
 
     private getFeaturedTrails(offset: number = 0) {
         this.trailServ.getFeaturedTrails(this.countTrailsLimit, offset)
-            .subscribe((result) => this.featuredTrails = this.featuredTrails.concat(<Trail[]>result),
+            .subscribe((result) => {this.featuredTrails = this.featuredTrails.concat(<Trail[]>result)
+            console.log(this.featuredTrails)},
             (error) => console.log(error))
     }
 
@@ -48,6 +49,7 @@ export class FeaturedTrails implements OnInit {
     }
 
     private getBackgroundImage(trail: Trail) {
+        //get first imege trail or return default image from assets
         return !!trail.images && trail.images.length >= 1 ? trail.images[0] : '../../assets/images/default_trail.jpg'
     }
 
