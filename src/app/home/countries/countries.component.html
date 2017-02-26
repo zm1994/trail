@@ -15,6 +15,7 @@
   <button *ngIf="!showedMore" class="btn-link col-xs-12 text-center" (click)="showMoreCountries()">Show all</button>
   <button *ngIf="showedMore" class="btn-link col-xs-12 text-center" (click)="showLessCountries()">Show less</button>
 </section>
+<!--show wrapper for descktop-->
 <section class="countries_wrapper_desktop hidden-xs hidden-sm col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 tab-container">
   <ul class="nav nav-tabs">
     <li [class.active]="i==0" *ngFor="let continent of colectionGeographicObjects.continents; let i=index">

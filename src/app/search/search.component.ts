@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild, TemplateRef} from '@angular/core'
+import {Component, ElementRef, OnInit, ViewChild, Input, OnChanges} from '@angular/core'
 import { Router } from '@angular/router'
 import { SearchVariant } from '../models/search_variant.model'
 import { TrailService } from '../services/trail.service'
@@ -7,10 +7,11 @@ import { Observable } from 'rxjs/Rx';
 @Component({
     selector: 'search',
     templateUrl: 'search.component.html',
-    styleUrls: ['search.component.css']
+    styleUrls: ['search.component.css'],
 })
 
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnChanges {
+    @Input() onlyTrails: boolean;
     @ViewChild('searchInput')
     private searchInput: ElementRef;
     private inputValue: string;
@@ -22,7 +23,7 @@ export class SearchComponent implements OnInit {
         this.searchVarians = []
     }
 
-    ngOnInit() {
+    ngOnChanges() {
         //set event on input in search field
         const eventStream = Observable.fromEvent(this.searchInput.nativeElement, 'keyup')
             .map(() => this.inputValue)
@@ -31,7 +32,7 @@ export class SearchComponent implements OnInit {
 
         eventStream.subscribe((input) => {
             if(!!input)
-                this.trailServ.searchTrails(input, true).subscribe((res) => {
+                this.trailServ.searchTrails(input, this.onlyTrails).subscribe((res) => {
                   this.searchVarians = <SearchVariant[]>res
                 }, (err) => console.log(err))
             else this.searchVarians = []

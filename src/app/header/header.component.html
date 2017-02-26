@@ -1,0 +1,35 @@
+<nav *ngIf="!withSearchForm" class="navbar">
+    <div class="col-xs-2 col-sm-3 col-md-2 col-md-push-9 col-lg-push-9 col-lg-1 create_trail">
+        <a href="#">
+            <span class="glyphicon glyphicon-plus"></span>
+            <div>CREATE TAIL</div>
+        </a>
+    </div>
+    <div class="col-xs-10 col-sm-7 col-md-8 col-md-pull-2 col-lg-9 text-center">
+        <a href="/" class="logo">OUTDOOR.ROCKS</a>
+    </div>
+    <div class="col-xs-0 col-sm-2 col-md-2 col-md-push-1 col-lg-1 join_us">
+        <a routerLink='/'>join us</a>
+    </div>
+</nav>
+
+<nav *ngIf="withSearchForm" class="navbar navbar_with_search">
+    <div class="col-xs-2 col-sm-3 col-md-2 col-md-push-9 col-lg-push-9 col-lg-1 create_trail">
+        <a href="#">
+            <span class="glyphicon glyphicon-plus"></span>
+            <div>CREATE TAIL</div>
+        </a>
+    </div>
+    <div [hidden]="device.innerWidth<992 && searchFormIsShown" class="col-xs-4 col-sm-7 col-md-8 col-md-pull-2 col-lg-9 text-center">
+        <a href="/" class="logo">OUTDOOR.ROCKS</a>
+    </div>
+    <div *ngIf="device.innerWidth>992 || searchFormIsShown" class="col-xs-10 col-sm-2">
+        <search [onlyTrails]="true"></search>
+    </div>
+    <div class="hidden-xs hidden-sm col-sm-2 col-md-2 col-md-push-1 col-lg-1 join_us">
+        <a routerLink='/'>join us</a>
+    </div>
+    <button [hidden]="searchFormIsShown" (click)="showSearchForm()" class="btn hidden-md hidden-lg col-xs-4 col-sm-2 col-md-2 col-md-push-1 col-lg-1">
+        <span class="glyphicon glyphicon-search"></span>
+    </button>
+</nav>

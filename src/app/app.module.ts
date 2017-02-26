@@ -16,6 +16,9 @@ import { FeaturedTrails } from './featured_trails/featured_trails.component'
 import { HomeComponent } from './home/home.component'
 import { SearchComponent } from './search/search.component'
 import { TrailComponent } from './trail/trail.component'
+import { HeaderComponent } from './header/header.component'
+import { TrailPhotosComponent } from './trail/trail_photos/trail_photos.component'
+import { PhotoUploaderComponent } from './trail/photo_uploader/photo_uploader.component'
 
 import { TrailService } from './services/trail.service'
 
@@ -25,9 +28,12 @@ import { TrailService } from './services/trail.service'
     AppComponent,
     CountriesComponent,
     FeaturedTrails,
+    HeaderComponent,
     HomeComponent,
     SearchComponent,
-    TrailComponent
+    TrailComponent,
+    TrailPhotosComponent,
+    PhotoUploaderComponent
   ],
   imports: [
     AgmCoreModule.forRoot({

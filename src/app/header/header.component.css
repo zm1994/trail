@@ -1,4 +1,4 @@
-/*a {
+a {
     text-decoration: none;
     color: inherit;
 }
@@ -12,11 +12,6 @@
 
 .logo {
     color: inherit;
-}*/
-
-.search_title {
-    font-weight: bold;
-    color: white;
 }
 
 .search {
@@ -29,7 +24,7 @@
     background-size: cover;
 }
 
-/*.empty {
+.empty {
     padding-left: 13px;
     padding-right: 13px;
 }
@@ -39,7 +34,11 @@
   border: 4px solid #cccccc;
   border-style: dashed;
   height: 88px;
-}*/
+}
+
+.navbar_with_search {
+    background: #1d872e;
+}
 
 @media only screen
   and (max-width: 759px) {
@@ -47,15 +46,8 @@
       .search {
         height: 287px;
       }
-        
-      .search_wrapper {
-        margin-top: 30px;
-      }
 
-      .search_title {
-        font-size: 26px;
-      }
-      /*.navbar {
+      .navbar {
         padding-top: 7px;
       }
 
@@ -81,7 +73,11 @@
 
       .join_us {
           display: none;
-      }*/
+      }
+
+      .navbar_with_search .form-group{
+          margin-top: -21px;
+      }
   }
 
   @media only screen
@@ -89,15 +85,8 @@
         .search {
             height: 439px;
         }
-        
-        .search_wrapper {
-            margin-top: 102px;
-        }
 
-        .search_title {
-            font-size: 43px;
-        }
-        /*.navbar {
+        .navbar {
                 padding-top: 9px;
         }
         .create_trail {
@@ -119,12 +108,13 @@
           margin-left: 49px;
           margin-top: 4px;
           display: block;
-      }*/
+      }
+
   }
 
   @media only screen
     and (min-width: 995px) {
-        /*.create_trail {
+        .create_trail {
             background: #1d872e;
             width: 151px;
             margin-left: -3%;
@@ -152,14 +142,14 @@
             font-size: 15px;
             padding-right: 17px;
             margin-left: -5%;
-         }*/
+         }
 
          .search {
              height: 675px;
          }
     }
 
-/*@media only screen
+@media only screen
   and(min-width: 996px)
   and(max-width: 1466px) {
   .logo {
@@ -170,9 +160,9 @@
     margin-left: -1%;
   }
 
-}*/
+}
 
-/*@media only screen
+@media only screen
   and (min-width: 1477px){
   .create_trail {
     margin-left: 5%;
@@ -189,4 +179,4 @@
   .glyphicon_search {
     left: 97%;
   }
-}*/
+}

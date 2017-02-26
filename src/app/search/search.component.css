@@ -1,7 +1,7 @@
-.search_title {
+/*.search_title {
     font-weight: bold;
     color: white;
-}
+}*/
 
 input {
     border-radius: 0px;
@@ -27,6 +27,7 @@ input {
 
 .glyphicon-search:before {
     position: absolute;
+    color: #000000;
  }
 
 .variants_trails {
@@ -65,13 +66,13 @@ input {
 
 @media only screen
   and (max-width: 759px) {
-    .search_wrapper {
+    /*.search_wrapper {
         margin-top: 30px;
-    }
+    }*/
 
-    .search_title {
+    /*.search_title {
         font-size: 26px;
-    }
+    }*/
 
     .form-group {
         margin-top: -11px;
@@ -111,13 +112,13 @@ input {
 
 @media only screen
     and (min-width: 760px) {
-    .search_wrapper {
+    /*.search_wrapper {
         margin-top: 102px;
-    }
+    }*/
 
-    .search_title {
+    /*.search_title {
         font-size: 43px;
-    }
+    }*/
 
     input {
         height: 61px;
