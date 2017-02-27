@@ -39,14 +39,12 @@ exports.getCountTrails = function (req, res) {
 
 exports.uploadFile = function (req, res) {
   upload(req, res, function (err) {
-    console.log(req.file);
-    console.log(req)
     if (err) {
       res.json({ error_code: 1, err_desc: err });
       return;
     }
     pool.query("Select * from upload_photo_trail($1, $2)", [req.body.id, req.file.filename],
-    function (error, client) { handleResponse(error, client, res) })
+    function (error, client) { handleResponse(error, client, res) });
     // res.json({ error_code: 0, err_desc: null });
   })
-}
+};

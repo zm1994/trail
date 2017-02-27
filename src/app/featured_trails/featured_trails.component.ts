@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core'
-import { Router } from '@angular/router' 
+import { Router } from '@angular/router'
 import { TrailService } from '../services/trail.service'
 import { Trail } from '../models/trail.model'
 
@@ -27,9 +27,9 @@ export class FeaturedTrails implements OnInit {
     ngOnInit() {
         //get count trails for display button "MORE" if count is more than 6
         this.trailServ.getCountTrails(true)
-            .subscribe((result) => this.countFeaturedTrails = result[0].count, 
+            .subscribe((result) => this.countFeaturedTrails = result[0].count,
             (error) => console.log(error));
-        //get first 6 trails 
+        //get first 6 trails
         this.getFeaturedTrails()
     }
 
@@ -40,7 +40,7 @@ export class FeaturedTrails implements OnInit {
             (error) => console.log(error))
     }
 
-    private getMoreFeaturedTrails() { 
+    private getMoreFeaturedTrails() {
         this.getFeaturedTrails(this.offset += this.countTrailsLimit)
     }
 
@@ -49,8 +49,9 @@ export class FeaturedTrails implements OnInit {
     }
 
     private getBackgroundImage(trail: Trail) {
+      let pathToImage = '../../assets/images/'
         //get first imege trail or return default image from assets
-        return !!trail.images && trail.images.length >= 1 ? trail.images[0] : '../../assets/images/default_trail.jpg'
+        return !!trail.images && trail.images.length >= 1 ? ('../../../server/uploads/' + trail.images[0]) : ('../../assets/images/default_trail.jpg')
     }
 
     private onSelectTrail(id: number) {
