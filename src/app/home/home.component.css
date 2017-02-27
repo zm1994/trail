@@ -13,7 +13,9 @@
 .logo {
     color: inherit;
 }*/
-
+header-comp {
+  background-color: blue;
+}
 .search_title {
     font-weight: bold;
     color: white;

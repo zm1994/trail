@@ -1,4 +1,5 @@
-import { Component } from '@angular/core'
+import { Component, Input, OnChanges } from '@angular/core'
+import { FileUploader } from 'ng2-file-upload';
 
 @Component({
     selector: 'photo-uploader',
@@ -7,6 +8,20 @@ import { Component } from '@angular/core'
 })
 
 
-export class PhotoUploaderComponent {
-    constructor(){}
+export class PhotoUploaderComponent implements OnChanges {
+    URL: string; //url for upload file
+    public uploader: FileUploader;
+    @Input() trailId: number;
+
+    constructor() {
+        this.URL = window.location.origin + '/api/upload/';
+        this.uploader = new FileUploader({ url: this.URL });
+    }
+
+    ngOnChanges() {
+        console.log(this.trailId)
+        this.uploader.onBuildItemForm = (item, form) => {
+            form.append('id', this.trailId.toString());
+        };
+    }
 }

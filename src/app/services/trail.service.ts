@@ -46,4 +46,12 @@ export class TrailService {
                     .map((res) => res.json())
                     .catch((error) => Observable.throw(error.json() || 'Server error'))
     }
+
+    getTrailById(id: number) {
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('id', id.toString());
+        return this.http.get('/api/trail/', { search: params })
+                    .map((res) => res.json())
+                    .catch((error) => Observable.throw(error.json() || 'Server error'))
+    }
 }
