@@ -17,6 +17,7 @@ app.use(function (req, res, next) { //allow cross origin requests
 // Create link to Angular build directory
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
+app.use(express.static('server/uploads'));
 
 var Pool = pg.Pool;
 pg.defaults.ssl = true;

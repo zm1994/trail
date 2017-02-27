@@ -1,3 +1,6 @@
 <header-comp [withSearchForm]="false"></header-comp>
-<trail-photos></trail-photos>
-<photo-uploader *ngIf="trail" [trailId]="trail.id"></photo-uploader>
+<section *ngIf="trail">
+    <trail-photos *ngIf="trail.images" [photos]="trail.images"></trail-photos>
+    <photo-uploader [contentUploadLink]="sendUploadLinkText()" [trailId]="trail.id" (photoUpload)="onPhotoUpload($event)"></photo-uploader>
+</section>
+

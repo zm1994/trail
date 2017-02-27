@@ -49,9 +49,8 @@ export class FeaturedTrails implements OnInit {
     }
 
     private getBackgroundImage(trail: Trail) {
-      let pathToImage = '../../assets/images/'
         //get first imege trail or return default image from assets
-        return !!trail.images && trail.images.length >= 1 ? ('../../../server/uploads/' + trail.images[0]) : ('../../assets/images/default_trail.jpg')
+        return !!trail.images && trail.images.length >= 1 ? trail.images[0] : '../../assets/images/default_trail.jpg'
     }
 
     private onSelectTrail(id: number) {

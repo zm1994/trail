@@ -45,6 +45,5 @@ exports.uploadFile = function (req, res) {
     }
     pool.query("Select * from upload_photo_trail($1, $2)", [req.body.id, req.file.filename],
     function (error, client) { handleResponse(error, client, res) });
-    // res.json({ error_code: 0, err_desc: null });
   })
 };

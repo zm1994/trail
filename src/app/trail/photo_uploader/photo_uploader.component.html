@@ -1,8 +1,8 @@
-<div class="form-group">
-   <label for="single">single</label>
-   <input id="single" type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />
+<div *ngIf="uploader.isUploading" class="text-center">
+    <span class="glyphicon glyphicon-repeat fast-right-spinner"></span>
 </div>
-<button type="button" class="btn btn-success btn-s"
-   (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
-    <span class="glyphicon glyphicon-upload"></span> Upload all
-</button><br/>
+<a *ngIf="!uploader.isUploading" class="file-input-wrapper btn col-md-12 col-xs-12 col-sm-12 col-lg-12">
+    <span class="upload_link">{{contentUploadLink}}</span>
+    <input type="file" class="btn-primary col-md-12" name="single" ng2FileSelect [uploader]="uploader"
+         title="Search for a file to add">
+</a> 

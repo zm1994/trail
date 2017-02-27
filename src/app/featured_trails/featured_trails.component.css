@@ -10,10 +10,10 @@ h1 {
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    -webkit-background-size: initial;
+    -moz-background-size: initial;
+    -o-background-size: initial;
+    background-size: initial;
 }
 
 .featured_trail:hover {
