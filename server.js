@@ -74,3 +74,9 @@ app.get('/api/trail/count/', trail.getCountTrails)
 
 app.post('/api/upload/', trail.uploadFile);
 
+//send unknown request to index.html, which will be catch by angular2 router-outlet
+app.get('*', function(req, res) {
+  res.sendFile(distDir + '/index.html');
+});
+
+

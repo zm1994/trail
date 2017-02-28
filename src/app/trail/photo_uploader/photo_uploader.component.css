@@ -1,4 +1,4 @@
-.file-input-wrapper {   
+.file-input-wrapper {
     background: transparent;
 }
 
@@ -6,11 +6,12 @@ input[type="file"] {
     margin-top: -34px;
     opacity: 0;
     min-height: 41px;
+    cursor: pointer;
 }
 
 .upload_link {
     color: white;
-    font-size: 17px;    
+    font-size: 17px;
     font-weight: bold;
     background: transparent;
     text-overflow: initial;
