@@ -1,38 +1,5 @@
-<!--<owl-carousel  [options]="{items: 3, dots: false, navigation: false}"-->
-<!--[carouselClasses]="['owl-theme', 'row', 'sliding']">-->
-  <!--<div class="item">-->
-    <!--<div class="thumbnail-image" [style.background-image]="'url(../../assets/images/background_' + 2 + '.jpg) no-repeat scroll center center / 80px 80px'"></div>-->
-  <!--</div>-->
-  <!--<div class="item">-->
-    <!--<div class="thumbnail-image" [style.background-image]="'url(../../assets/images/background_' + 1 + '.jpg) no-repeat scroll center center / 80px 80px'"></div>-->
-  <!--</div>-->
-  <!--<div class="item">-->
-    <!--<div class="thumbnail-image" [style.background-image]="'url(../../assets/images/background_' + 3 + '.jpg) no-repeat scroll center center / 80px 80px'"></div>-->
-  <!--</div>-->
-  <!--<div class="item">-->
-    <!--<div class="thumbnail-image" [style.background-image]="'url(../../assets/images/background_' + 1 + '.jpg) no-repeat scroll center center / 80px 80px'"></div>-->
-  <!--</div>-->
-  <!--<div class="item">-->
-    <!--<div class="thumbnail-image" [style.background-image]="'url(../../assets/images/background_' + 2 + '.jpg) no-repeat scroll center center / 80px 80px'"></div>-->
-  <!--</div>-->
-<!--</owl-carousel>-->
-<div class="owl-carousel owl-theme owl-loaded">
-  <div class="owl-stage-outer">
-    <div class="owl-stage">
-      <div class="owl-item">first</div>
-      <div class="owl-item">second</div>
-      <div class="owl-item">last</div>
-    </div>
-  </div>
-  <div class="owl-controls">
-    <div class="owl-nav">
-      <div class="owl-prev">prev</div>
-      <div class="owl-next">next</div>
-    </div>
-    <div class="owl-dots">
-      <div class="owl-dot active"><span></span></div>
-      <div class="owl-dot"><span></span></div>
-      <div class="owl-dot"><span></span></div>
-    </div>
-  </div>
-</div>
+ <owl-carousel [options]="{navigation: true, pagination: true, rewindNav : false}">
+       <div *ngFor="let img of images">
+         <img src="http://lorempixel.com/400/200/{{img}}"/>
+       </div>
+  </owl-carousel>

@@ -9,4 +9,5 @@ import { Component,Input } from '@angular/core'
 
 export class TrailPhotosComponent {
     @Input() photos: string[];
+    images: Array<string> = ['sports', 'abstract', 'people', 'transport', 'city', 'technics', 'nightlife', 'animals'];
 }

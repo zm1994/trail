@@ -8,7 +8,6 @@ import { CollapseModule } from 'ng2-bootstrap';
 import { ProgressbarModule } from 'ng2-bootstrap'
 import { RouterModule } from '@angular/router'
 import { ROUTES } from './routes'
-import { OwlModule } from 'ng2-owl-carousel';
 
 import { AppComponent } from './app.component';
 import { CountriesComponent } from './home/countries/countries.component'
@@ -20,11 +19,9 @@ import { TrailComponent } from './trail/trail.component'
 import { HeaderComponent } from './header/header.component'
 import { TrailPhotosComponent } from './trail/trail_photos/trail_photos.component'
 import { PhotoUploaderComponent } from './trail/photo_uploader/photo_uploader.component'
+import { OwlCarousel } from './shared/owl_carousel/owl_carousel.component'
 
 import { TrailService } from './services/trail.service'
-
-
-
 
 @NgModule({
   declarations: [
@@ -34,6 +31,7 @@ import { TrailService } from './services/trail.service'
     FileSelectDirective,
     HeaderComponent,
     HomeComponent,
+    OwlCarousel,
     SearchComponent,
     TrailComponent,
     TrailPhotosComponent,
@@ -51,7 +49,7 @@ import { TrailService } from './services/trail.service'
     ProgressbarModule.forRoot(),
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
-    OwlModule
+
   ],
   providers: [TrailService],
   bootstrap: [AppComponent]

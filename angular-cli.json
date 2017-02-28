@@ -18,9 +18,13 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
+        "../node_modules/owl.carousel/dist/assets/owl.carousel.css",
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+         "../node_modules/jquery/dist/jquery.js",
+         "../node_modules/owl.carousel/dist/owl.carousel.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
