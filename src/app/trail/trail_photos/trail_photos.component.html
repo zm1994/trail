@@ -1,5 +1,12 @@
- <owl-carousel [options]="{navigation: true, pagination: true, rewindNav : false}">
-       <div *ngFor="let img of images">
-         <img src="http://lorempixel.com/400/200/{{img}}"/>
-       </div>
+<section class="col-md-12 col-xs-12 col-sm-12 carousel_wraper">
+  <div class="line_nav_carusel col-md-12">
+    <span (click)="carousel.movePrevSlide()" class="glyphicon glyphicon-chevron-left nav-left col-md-2 text-left"></span>
+    <span (click)="carousel.moveNextSlide()" class="glyphicon glyphicon-chevron-right nav-right col-md-2 col-md-offset-8 text-right"></span>
+  </div>
+  <owl-carousel #carousel [options]="optionsCarousel">
+        <div *ngFor="let img of images">
+          <img src="http://lorempixel.com/400/200/{{img}}"/>
+        </div>
   </owl-carousel>
+</section>
+ 

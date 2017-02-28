@@ -1,4 +1,45 @@
-.thumbnail-image {
-  width: 70px;
-  height: 50px;
+.nav-right {
+  /*position: absolute;
+  top: 55px;
+  left: 20px;*/
+    padding-right: 32px;
 }
+
+.nav-left, .nav-right {
+  font-size: 29px;
+}
+
+.nav-left:before, .nav-right:before {
+    background: black;
+    font-size: 29px;
+    opacity: 0.7;
+    border-radius: 50%;
+}
+
+.nav-left {
+  /*position: absolute;
+  top: 55px;
+  left: 20px;*/
+  margin-left: -5px;
+}
+
+
+
+.line_nav_carusel {
+    position: absolute;
+    padding: 0px;
+    width: 100%;
+    z-index: 20;
+    top: 78px;
+    min-height: 20px;
+}
+
+.carousel_wraper {
+    overflow: hidden;
+    font-size: 28xp;
+    position: relative;
+    color: white;
+}
+
+
+

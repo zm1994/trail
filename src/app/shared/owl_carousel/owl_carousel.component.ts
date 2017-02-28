@@ -3,43 +3,30 @@ declare var $: any;
 
 @Component({
   selector: 'owl-carousel',
-  template: `<ng-content></ng-content>`
+  template: `<ng-content></ng-content>`,
+  styleUrls: ["owl_carousel.component.css"]
 })
 export class OwlCarousel {
   @HostBinding('class') defaultClass = 'owl-carousel';
-  @Input() options: Object;
-  
-  $owlElement: any;
-
-  defaultOptions: any = {};
+  @Input() private options: Object;
+  private $owlElement: any;
+  private defaultOptions: any = {};
 
   constructor(private el: ElementRef) {}
 
   ngAfterViewInit() {
-    // use default - empty
     for (var key in this.options) {
       this.defaultOptions[key] = this.options[key];
     }
-    this.$owlElement = $(this.el.nativeElement).owlCarousel({
-    loop:true,
-    margin:10,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:5,
-            nav:true,
-            loop:false
-        }
-    }
-});
+    this.$owlElement = $(this.el.nativeElement).owlCarousel(this.defaultOptions);
+  }
+
+  moveNextSlide() {
+      this.$owlElement.trigger('next.owl.carousel');
+  }
+
+  movePrevSlide() {
+      this.$owlElement.trigger('prev.owl.carousel');
   }
 
   ngOnDestroy() {
