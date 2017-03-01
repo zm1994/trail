@@ -3,3 +3,8 @@
   min-height: 52px;
   max-height: 52px;
 }
+
+.upload_link {
+  background: #cccccc;
+  padding-top: 5px;
+}

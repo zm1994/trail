@@ -60,7 +60,10 @@ var storage = multer.diskStorage({ //multers disk storage settings
   }
 });
 
-exports.upload = multer({ storage: storage }).single('file');
+exports.upload = multer({ 
+  storage: storage,
+  limits:{ fileSize: 10*1024*1024 } 
+}).single('file');
 
 var trail = require('./server/trail_api')
 

@@ -3,9 +3,9 @@
 }
 
 input[type="file"] {
-  margin-top: -34px;
+  margin-top: -76px;
   opacity: 0;
-  min-height: 41px;
+  min-height: 137px;
   cursor: pointer;
 }
 
