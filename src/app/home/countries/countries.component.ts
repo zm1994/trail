@@ -13,7 +13,7 @@ export class CountriesComponent implements OnInit {
   private listContinents: ElementRef;
   private colectionGeographicObjects: any
   private showedMore: boolean = false
-  
+
 
   constructor(private trailServ: TrailService) {
     this.colectionGeographicObjects = []
@@ -44,27 +44,27 @@ export class CountriesComponent implements OnInit {
   }
 
   private groupCountries(array: any[]){
-     let continents = {};
-     let countries = {};
-     let regions = {};
-     return array.reduce((res, reg) => {
-          if (!res.continents) res.continents = [];
-          if (!continents[reg.continent]) {
-               let continent = {name: reg.continent, countries: []};
-               res.continents.push(continent);
-               continents[reg.continent] = continent;
-          }
-          if (!countries[reg.country]) {
-               let country = {name: reg.country, regions: []};
-               continents[reg.continent].countries.push(country);
-               countries[reg.country] = country;
-          }
-          if (!regions[reg.region]) {
-               let region = {name: reg.region};
-               countries[reg.country].regions.push(region);
-               regions[reg.region] = region;
-          }
-          return res;
-     }, {});
+    let continents = {};
+    let countries = {};
+    let regions = {};
+    return array.reduce((res, reg) => {
+      if (!res.continents) res.continents = [];
+      if (!continents[reg.continent]) {
+        let continent = {name: reg.continent, countries: []};
+        res.continents.push(continent);
+        continents[reg.continent] = continent;
+      }
+      if (!countries[reg.country]) {
+        let country = {name: reg.country, regions: []};
+        continents[reg.continent].countries.push(country);
+        countries[reg.country] = country;
+      }
+      if (!regions[reg.region]) {
+        let region = {name: reg.region};
+        countries[reg.country].regions.push(region);
+        regions[reg.region] = region;
+      }
+      return res;
+    }, {});
   }
 }

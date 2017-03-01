@@ -1,12 +1,14 @@
-<section class="col-md-12 col-xs-12 col-sm-12 carousel_wraper">
+<section class="col-md-12 col-lg-12 col-xs-12 col-sm-12 carousel_wraper">
   <div class="line_nav_carusel col-md-12">
-    <span (click)="carousel.movePrevSlide()" class="glyphicon glyphicon-chevron-left nav-left col-md-2 text-left"></span>
-    <span (click)="carousel.moveNextSlide()" class="glyphicon glyphicon-chevron-right nav-right col-md-2 col-md-offset-8 text-right"></span>
+    <span (click)="carousel.movePrevSlide()" class="glyphicon glyphicon-chevron-left nav-left col-xs-2 col-sm-2 col-md-2 text-left"></span>
+    <span (click)="carousel.moveNextSlide()" class="glyphicon glyphicon-chevron-right nav-right col-xs-2 col-xs-offset-8 col-sm-2 col-sm-offset-8 col-md-2 col-md-offset-8 text-right"></span>
   </div>
   <owl-carousel #carousel [options]="optionsCarousel">
-        <div *ngFor="let img of images">
-          <img src="http://lorempixel.com/400/200/{{img}}"/>
-        </div>
+    <div *ngFor="let photo of photos">
+      <div class="item photo_carousel col-xs-12 col-sm-12 col-md-12" [style.background-image]="'url(' + photo + ')'"></div>
+    </div>
+    <div class="upload_link">
+      <ng-content></ng-content>
+    </div>
   </owl-carousel>
 </section>
- 

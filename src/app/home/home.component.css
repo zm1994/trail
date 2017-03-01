@@ -1,194 +1,53 @@
-/*a {
-    text-decoration: none;
-    color: inherit;
-}
-.navbar {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    font-weight: bold;
-    color: white;
-}
-
-.logo {
-    color: inherit;
-}*/
-header-comp {
-  background-color: blue;
-}
 .search_title {
-    font-weight: bold;
-    color: white;
+  font-weight: bold;
+  color: white;
 }
 
 .search {
-    background-position-x: center;
-    background-position-y: center;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-
-/*.empty {
-    padding-left: 13px;
-    padding-right: 13px;
-}
-
-.dotted_block {
-  margin-top: 36px;
-  border: 4px solid #cccccc;
-  border-style: dashed;
-  height: 88px;
-}*/
 
 @media only screen
-  and (max-width: 759px) {
+and (max-width: 759px) {
 
-      .search {
-        height: 287px;
-      }
-        
-      .search_wrapper {
-        margin-top: 30px;
-      }
-
-      .search_title {
-        font-size: 26px;
-      }
-      /*.navbar {
-        padding-top: 7px;
-      }
-
-      .glyphicon-plus {
-        font-size: 17px;
-        padding: 8px 10px 10px 24px;
-      }
-
-      .create_trail {
-          background: transparent;
-          color: inherit;
-      }
-
-      .create_trail>a div {
-          color: transparent;
-      }
-
-      .logo {
-        font-size: 19px;
-        line-height: 35px;
-        margin-left: -47px;
-    }
-
-      .join_us {
-          display: none;
-      }*/
+  .search {
+    height: 287px;
   }
 
-  @media only screen
-    and (min-width: 760px) {
-        .search {
-            height: 439px;
-        }
-        
-        .search_wrapper {
-            margin-top: 102px;
-        }
-
-        .search_title {
-            font-size: 43px;
-        }
-        /*.navbar {
-                padding-top: 9px;
-        }
-        .create_trail {
-            padding-top: 8px;
-        }
-       .create_trail>a div {
-          color: inherit;
-          display: inline-block;
-          padding-left: 12px;
-      }
-
-      .logo {
-          font-size: 23px;
-          margin-left: -67px;
-      }
-
-      .join_us a {
-          color: inherit;
-          margin-left: 49px;
-          margin-top: 4px;
-          display: block;
-      }*/
+  .search_wrapper {
+    margin-top: 30px;
   }
 
-  @media only screen
-    and (min-width: 995px) {
-        /*.create_trail {
-            background: #1d872e;
-            width: 151px;
-            margin-left: -3%;
-            height: 42px;
-         }
+  .search_title {
+    font-size: 26px;
+  }
+}
 
-         .create_trail a {
-            margin-top: 4px;
-            width: 100%;
-            margin-left: 1%;
-            display: block;
-            height: 41px;
-         }
-
-         .logo {
-            font-size: 23px;
-            display: flex;
-            margin-top: 6px;
-            margin-left: 12%;
-         }
-
-         .join_us {
-            width: 136px;
-            margin-top: 5px;
-            font-size: 15px;
-            padding-right: 17px;
-            margin-left: -5%;
-         }*/
-
-         .search {
-             height: 675px;
-         }
-    }
-
-/*@media only screen
-  and(min-width: 996px)
-  and(max-width: 1466px) {
-  .logo {
-    margin-left: 7%;
+@media only screen
+and (min-width: 760px) {
+  .search {
+    height: 439px;
   }
 
-  .create_trail {
-    margin-left: -1%;
+  .search_wrapper {
+    margin-top: 102px;
   }
 
-}*/
-
-/*@media only screen
-  and (min-width: 1477px){
-  .create_trail {
-    margin-left: 5%;
+  .search_title {
+    font-size: 43px;
   }
+}
 
-  .logo {
-    margin-left: 13%;
+@media only screen
+and (min-width: 995px) {
+  .search {
+    height: 675px;
   }
+}
 
-  .join_us {
-    margin-left: -4%;
-  }
-
-  .glyphicon_search {
-    left: 97%;
-  }
-}*/

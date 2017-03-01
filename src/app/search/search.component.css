@@ -1,152 +1,131 @@
-/*.search_title {
-    font-weight: bold;
-    color: white;
-}*/
-
 input {
-    border-radius: 0px;
+  border-radius: 0px;
 }
 
 .form-group {
-    padding-top: 5px;
-    margin-bottom: 15px;
-    min-height: 100px;
+  padding-top: 5px;
+  margin-bottom: 15px;
+  min-height: 100px;
 }
 
 .list-group-item {
-    border-radius: 0px;
+  border-radius: 0px;
 }
 
 .list-group-item:first-of-type {
-    margin-top: 2px;
+  margin-top: 2px;
 }
 
 .list-group-item + .list-group-item {
-    border-top: 1px solid gray;
+  border-top: 1px solid gray;
 }
 
 .glyphicon-search:before {
-    position: absolute;
-    color: #000000;
- }
+  position: absolute;
+  color: #000000;
+}
 
 .variants_trails {
-     padding: 0px;
-     z-index: 20;
- }
+  padding: 0px;
+  z-index: 20;
+}
 
 .walkman {
-    background: url('../../assets/icons/walkman_icon.jpg')
+  background: url('../../assets/icons/walkman_icon.jpg')
 }
 
 .globe {
-    background: url('../../assets/icons/earth-globe.png')
+  background: url('../../assets/icons/earth-globe.png')
 }
 
 .variant_name {
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: #000000;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #000000;
 }
 
 .variant_length {
-    color: #888888;
+  color: #888888;
 }
 
 .variant_icon {
-    width: 30px;
-    height: 30px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 
 @media only screen
-  and (max-width: 759px) {
-    /*.search_wrapper {
-        margin-top: 30px;
-    }*/
-
-    /*.search_title {
-        font-size: 26px;
-    }*/
-
-    .form-group {
-        margin-top: -11px;
-    }
-
-    input {
-        padding-left: 25px;
-        padding-right: 5px;
-    }
-
-    .glyphicon-search {
-        top: 15px;
-        left: 10px;
-    }
-
-    .variants_trails {
-      position: absolute;
-      width: inherit;
-      padding-right: 29px;
-    }
-
-    .variant_icon {
-        width: 17px;
-        height: 17px;
-        margin-top: 4px;
-        margin-left: -8px;
-    }
-
-    .list-group-item {
-        min-height: 49px;
-    }
-
-    .variant_length {
-      font-size: 12px;
-    }
-}
-
-@media only screen
-    and (min-width: 760px) {
-    /*.search_wrapper {
-        margin-top: 102px;
-    }*/
-
-    /*.search_title {
-        font-size: 43px;
-    }*/
-
-    input {
-        height: 61px;
-        position: relative;
-        padding-left: 20px;
-        padding-top: 10px;
-    }
-
-    .glyphicon-search {
-        top: 26px;
-        font-size: 20px;
-        left: 94%;
-        z-index: 1;
-    }
-
-    .list-group-item {
-      min-height: 54px;
-    }
-
-
-    ::-webkit-input-placeholder {
-        font-size: 20px !important;
-    }
-
-    :-moz-placeholder { /* Firefox 18- */
-      font-size: 20px !important;
-    }
-    ::-moz-placeholder {  /* Firefox 19+ */
-      font-size: 20px !important;
-    }
+and (max-width: 759px) {
+  .form-group {
+    margin-top: -11px;
   }
+
+  input {
+    padding-left: 25px;
+    padding-right: 5px;
+  }
+
+  .glyphicon-search {
+    top: 15px;
+    left: 10px;
+  }
+
+  .variants_trails {
+    position: absolute;
+    width: inherit;
+    padding-right: 29px;
+  }
+
+  .variant_icon {
+    width: 17px;
+    height: 17px;
+    margin-top: 4px;
+    margin-left: -8px;
+  }
+
+  .list-group-item {
+    min-height: 49px;
+  }
+
+  .variant_length {
+    font-size: 12px;
+  }
+}
+
+@media only screen
+and (min-width: 760px) {
+  input {
+    height: 61px;
+    position: relative;
+    padding-left: 20px;
+    padding-top: 10px;
+  }
+
+  .glyphicon-search {
+    top: 26px;
+    font-size: 20px;
+    left: 94%;
+    z-index: 1;
+  }
+
+  .list-group-item {
+    min-height: 54px;
+  }
+
+
+  ::-webkit-input-placeholder {
+    font-size: 20px !important;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    font-size: 20px !important;
+  }
+  ::-moz-placeholder {  /* Firefox 19+ */
+    font-size: 20px !important;
+  }
+}

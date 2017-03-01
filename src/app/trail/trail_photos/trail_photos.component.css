@@ -1,8 +1,5 @@
 .nav-right {
-  /*position: absolute;
-  top: 55px;
-  left: 20px;*/
-    padding-right: 32px;
+  padding-right: 32px;
 }
 
 .nav-left, .nav-right {
@@ -10,35 +7,81 @@
 }
 
 .nav-left:before, .nav-right:before {
-    background: black;
-    font-size: 29px;
-    opacity: 0.7;
-    border-radius: 50%;
+  background: black;
+  font-size: 29px;
+  opacity: 0.7;
+  border-radius: 50%;
 }
 
 .nav-left {
-  /*position: absolute;
-  top: 55px;
-  left: 20px;*/
   margin-left: -5px;
 }
 
-
-
-.line_nav_carusel {
-    position: absolute;
-    padding: 0px;
-    width: 100%;
-    z-index: 20;
-    top: 78px;
-    min-height: 20px;
+.nav-left, .nav-right {
+  opacity: 0;
 }
 
+.nav-left:hover, .nav-right:hover {
+  opacity: 1;
+}
+
+.upload_link {
+  margin-top: 62px;
+}
+
+.line_nav_carusel {
+  position: absolute;
+  padding: 0px;
+  width: 100%;
+  z-index: 20;
+  max-height: 0px;
+}
+
+
 .carousel_wraper {
-    overflow: hidden;
-    font-size: 28xp;
-    position: relative;
-    color: white;
+  overflow: hidden;
+  position: relative;
+  margin-top: 1px;
+  min-height: 116px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: #cccccc;
+  color: white;
+}
+
+.upload_link {
+  background: #cccccc;
+}
+
+.photo_carousel {
+  height: 193px;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+@media only screen
+and (max-width: 767px) {
+  .line_nav_carusel {
+    top: 78px;
+  }
+}
+
+@media only screen
+and (min-width : 768px) {
+  .line_nav_carusel {
+    top: 64px;
+  }
+}
+
+@media only screen
+and (min-width : 992px) {
+  .line_nav_carusel {
+    top: 79px;
+  }
 }
 
 

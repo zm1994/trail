@@ -1,6 +1,10 @@
-<header-comp [withSearchForm]="false"></header-comp>
+<div class="header_trail">
+  <header-comp [withSearchForm]="false"></header-comp>
+</div>
 <section *ngIf="trail">
-    <trail-photos *ngIf="trail.images" [photos]="trail.images"></trail-photos>
-    <photo-uploader [contentUploadLink]="sendUploadLinkText()" [trailId]="trail.id" (photoUpload)="onPhotoUpload($event)"></photo-uploader>
+    <trail-photos *ngIf="trail.images.length >= 1" [photos]="trail.images">
+      <photo-uploader *ngIf="trail.images.length >= 1" [contentUploadLink]="sendUploadLinkText()" [trailId]="trail.id" (photoUpload)="onPhotoUpload($event)"></photo-uploader>
+    </trail-photos>
+    <photo-uploader *ngIf="trail.images.length == 0" [contentUploadLink]="sendUploadLinkText()" [trailId]="trail.id" (photoUpload)="onPhotoUpload($event)"></photo-uploader>
 </section>
 

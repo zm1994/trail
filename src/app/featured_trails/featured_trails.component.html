@@ -1,9 +1,9 @@
 <section class="wrapper_featured_trails col-xs-12 col-sm-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
   <h1 class="text-center">Featured trails</h1>
   <div class="featured_list">
-    <a (click)="onSelectTrail(trail.id)" class="featured_trail col-xs-6 col-sm-4 col-md-4 col-lg-4" 
-      [style.background-image]="'url(' + getBackgroundImage(trail) + ')'"
-      *ngFor="let trail of featuredTrails">
+    <a (click)="onSelectTrail(trail.id)" class="featured_trail col-xs-6 col-sm-4 col-md-4 col-lg-4"
+       [style.background-image]="'url(' + getBackgroundImage(trail) + ')'"
+       *ngFor="let trail of featuredTrails">
       <div class="level_trail col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">{{trail.level | uppercase}}</div>
       <div class="short_details_trail col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="country_trail col-xs-12 col-sm-12 col-md-12 col-lg-12">{{trail.country}}</div>
@@ -15,13 +15,13 @@
         <span *ngIf="trail.good_for_kids" class="good_for_kids col-sm-3 col-md-3 col-lg-3"></span>
         <span class="col-sm-3 col-md-3 col-lg-3" [class.many_days]="!trail.is_one_day"
               [class.one_day]="trail.is_one_day"></span>
-        <span class="col-sm-3 col-md-3 col-lg-3" 
-          [style.background-image]="'url(../assets/icons/' + trail.type_trail.toLowerCase() + '-white.png)'"></span>
+        <span class="col-sm-3 col-md-3 col-lg-3"
+              [style.background-image]="'url(../assets/icons/' + trail.type_trail.toLowerCase() + '-white.png)'"></span>
       </div>
     </a>
   </div>
-  <button *ngIf="allowedMoreFeaturedTrails()" 
-      class="btn_more_featured_trails text-center btn col-xs-12 col-sm-12 col-md-12 col-lg-12" 
-      (click)="getMoreFeaturedTrails()">MORE
-      </button>
+  <button *ngIf="allowedMoreFeaturedTrails()"
+          class="btn_more_featured_trails text-center btn col-xs-12 col-sm-12 col-md-12 col-lg-12"
+          (click)="getMoreFeaturedTrails()">MORE
+  </button>
 </section>

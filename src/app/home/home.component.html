@@ -1,28 +1,14 @@
 <main>
-    <div class="search" [style.background-image]="'url(../assets/images/background_' + numberBackgroundImage + '.jpg)'">
-        <!--<nav class="navbar">
-            <div class="col-xs-2 col-sm-3 col-md-2 col-md-push-9 col-lg-push-9 col-lg-1 create_trail">
-                <a href="#">
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <div>CREATE TAIL</div>
-                </a>
-            </div>
-            <div class="col-xs-10 col-sm-7 col-md-8 col-md-pull-2 col-lg-9 text-center">
-                <a href="/" class="logo">OUTDOOR.ROCKS</a>
-            </div>
-            <div class="col-xs-0 col-sm-2 col-md-2 col-md-push-1 col-lg-1 join_us">
-                <a routerLink='/'>join us</a>
-            </div>
-        </nav>-->
-        <header-comp [withSearchForm]="false"></header-comp>
-        <section class="search_wrapper">
-            <h1 class="search_title text-center">Find your route</h1>
-            <search [onlyTrails]="false"></search>
-        </section>
-    </div>
-    <countries></countries>
-    <section class="empty">
-        <div class="dotted_block hidden-xs col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2"></div>
+  <div class="search" [style.background-image]="'url(../assets/images/background_' + numberBackgroundImage + '.jpg)'">
+    <header-comp [withSearchForm]="false"></header-comp>
+    <section class="search_wrapper">
+      <h1 class="search_title text-center">Find your route</h1>
+      <search [onlyTrails]="false"></search>
     </section>
-    <featured-trails></featured-trails>
+  </div>
+  <countries></countries>
+  <section class="empty">
+    <div class="dotted_block hidden-xs col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2"></div>
+  </section>
+  <featured-trails></featured-trails>
 </main>

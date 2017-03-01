@@ -8,8 +8,5 @@ import { TrailService } from './services/trail.service'
 
 })
 export class AppComponent {
-
-
   constructor() {}
-
 }

@@ -1,12 +1,11 @@
-import { Component, Input, ElementRef, HostBinding } from '@angular/core';
+import {Component, Input, ElementRef, HostBinding, AfterViewInit, OnDestroy} from '@angular/core';
 declare var $: any;
 
 @Component({
   selector: 'owl-carousel',
-  template: `<ng-content></ng-content>`,
-  styleUrls: ["owl_carousel.component.css"]
+  template: `<ng-content></ng-content>`
 })
-export class OwlCarousel {
+export class OwlCarousel implements AfterViewInit, OnDestroy{
   @HostBinding('class') defaultClass = 'owl-carousel';
   @Input() private options: Object;
   private $owlElement: any;
@@ -22,11 +21,11 @@ export class OwlCarousel {
   }
 
   moveNextSlide() {
-      this.$owlElement.trigger('next.owl.carousel');
+    this.$owlElement.trigger('next.owl.carousel');
   }
 
   movePrevSlide() {
-      this.$owlElement.trigger('prev.owl.carousel');
+    this.$owlElement.trigger('prev.owl.carousel');
   }
 
   ngOnDestroy() {

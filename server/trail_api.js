@@ -44,6 +44,6 @@ exports.uploadFile = function (req, res) {
       return;
     }
     pool.query("Select * from upload_photo_trail($1, $2)", [req.body.id, req.file.filename],
-    function (error, client) { handleResponse(error, client, res) });
+      function (error, client) { handleResponse(error, client, res) });
   })
 };

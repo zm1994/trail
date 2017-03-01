@@ -7,17 +7,17 @@ h1 {
 }
 
 .featured_trail {
-    background-position-x: center;
-    background-position-y: center;
-    background-repeat: no-repeat;
-    -webkit-background-size: initial;
-    -moz-background-size: initial;
-    -o-background-size: initial;
-    background-size: initial;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: initial;
+  -moz-background-size: initial;
+  -o-background-size: initial;
+  background-size: initial;
 }
 
 .featured_trail:hover {
-    cursor: default;
+  cursor: default;
 }
 
 .wrapper_featured_trails {
@@ -27,86 +27,86 @@ h1 {
 }
 
 .level_trail {
-    background: #1d872e;
-    margin-top: 15px;
-    margin-left: 0px;
-    width: 44px;
-    padding: 2px 2px 2px 2px;
-    font-size: 10px;
-    height: 17px;
-  }
+  background: #1d872e;
+  margin-top: 15px;
+  margin-left: 0px;
+  width: 44px;
+  padding: 2px 2px 2px 2px;
+  font-size: 10px;
+  height: 17px;
+}
 
 .country_trail, .level_trail, .name_trail {
-    color: white;
-    font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
 
 .country_trail, .name_trail, .length_trail {
-    padding: 0px;
+  padding: 0px;
 }
 
 .name_trail, .country_trail {
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .length_trail {
-    color: #ffcc00;
+  color: #ffcc00;
 }
 
 .short_details_trail {
-    padding: 0px;
+  padding: 0px;
 }
 
 .btn_more_featured_trails {
-    background: #dddddd;
-    color: #888888;
-    font-size: 16px;
-    font-weight: bold;
-    padding-top: 9px;
-    line-height: 13px;
-    border-radius: 0px;
+  background: #dddddd;
+  color: #888888;
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 9px;
+  line-height: 13px;
+  border-radius: 0px;
 }
 
 .dog_allowed {
-    background: url('../assets/icons/dog-allowed-white.png');
+  background: url('../assets/icons/dog-allowed-white.png');
 }
 
 .good_for_kids {
-    background: url('../assets/icons/good-for-kids-white.png');
+  background: url('../assets/icons/good-for-kids-white.png');
 }
 
 .many_days {
-    background: url('../assets/icons/many-days-white.png');
+  background: url('../assets/icons/many-days-white.png');
 }
 
 .one_day {
-    background: url('../assets/icons/one-day-white.png');
+  background: url('../assets/icons/one-day-white.png');
 }
 
-.dog_allowed, 
-.good_for_kids, 
-.many_days, 
-.one_day, 
+.dog_allowed,
+.good_for_kids,
+.many_days,
+.one_day,
 .loop,
 .in-and-out,
 .point-to-point {
-    width: 24px;
-    height: 24px;
-    margin-top: 72px;
-    background-position-x: center;
-    background-position-y: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
+  width: 24px;
+  height: 24px;
+  margin-top: 72px;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
 }
 
 @media only screen
-  and (max-width: 767px) {
+and (max-width: 767px) {
 
   .featured_trail {
     height: 146px;
@@ -148,12 +148,12 @@ h1 {
 }
 
 @media only screen
-  and (min-width : 768px) {
+and (min-width : 768px) {
 
   h1 {
     font-size: 27px;
   }
-  
+
 
   .wrapper_featured_trails {
     padding-left: 13px;
@@ -189,7 +189,7 @@ h1 {
 }
 
 @media only screen
-  and (min-width : 992px) {
+and (min-width : 992px) {
 
   .featured_trail {
     height: 300px;
@@ -217,10 +217,10 @@ h1 {
     font-size: 13px;
   }
 
-  .dog_allowed, 
-  .good_for_kids, 
-  .many_days, 
-  .one_day, 
+  .dog_allowed,
+  .good_for_kids,
+  .many_days,
+  .one_day,
   .loop,
   .in-and-out,
   .point-to-point {
