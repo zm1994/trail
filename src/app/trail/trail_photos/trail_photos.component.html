@@ -5,10 +5,18 @@
   </div>
   <owl-carousel #carousel [options]="optionsCarousel">
     <div *ngFor="let photo of photos">
-      <div class="item photo_carousel col-xs-12 col-sm-12 col-md-12" [style.background-image]="'url(' + photo + ')'"></div>
+      <div (click)="showLargeCarousel(photo)" class="item photo_carousel col-xs-12 col-sm-12 col-md-12" [style.background-image]="'url(' + photo + ')'"></div>
     </div>
     <div class="upload_link">
       <ng-content></ng-content>
     </div>
   </owl-carousel>
+</section>
+<section *ngIf="largeMode" class="wraper_large_carousel">
+  <span class="glyphicon glyphicon-remove" (click)="hideLargeCarousel()"></span>
+  <carousel [interval]="0" [noWrap]="true">
+    <slide [active]="!!largePhoto==choicedPhoto" *ngFor="let largePhoto of photos; let index=index">
+      <img class="img-fluid center-block" [src]="largePhoto">
+    </slide>
+  </carousel>
 </section>

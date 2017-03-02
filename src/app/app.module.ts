@@ -20,6 +20,7 @@ import { HeaderComponent } from './header/header.component'
 import { TrailPhotosComponent } from './trail/trail_photos/trail_photos.component'
 import { PhotoUploaderComponent } from './trail/photo_uploader/photo_uploader.component'
 import { OwlCarousel } from './shared/owl_carousel/owl_carousel.component'
+import { CarouselModule } from 'ng2-bootstrap';
 
 import { TrailService } from './services/trail.service'
 
@@ -44,6 +45,7 @@ import { TrailService } from './services/trail.service'
     AlertModule.forRoot(),
     BrowserModule,
     CollapseModule.forRoot(),
+    CarouselModule.forRoot(),
     FormsModule,
     HttpModule,
     ProgressbarModule.forRoot(),

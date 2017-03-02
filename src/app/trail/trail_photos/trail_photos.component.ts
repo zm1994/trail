@@ -12,11 +12,11 @@ export class TrailPhotosComponent{
   @ViewChild('carousel')
   private carousel: OwlCarousel;
   private optionsCarousel: any;
-  private images: Array<string> = ['sports', 'abstract', 'people', 'transport', 'city', 'technics', 'nightlife', 'animals'];
+  largeMode: boolean;
+  choicedPhoto: string;
 
-  constructor(
-    private ref: ChangeDetectorRef
-  ) {
+  constructor( private ref: ChangeDetectorRef ) {
+    this.largeMode = false;
     this.optionsCarousel = {
       loop: false,
       margin: 2,
@@ -34,5 +34,14 @@ export class TrailPhotosComponent{
         }
       }
     }
+  }
+
+  showLargeCarousel() {
+    this.largeMode = true;
+  }
+
+  hideLargeCarousel(photo: string) {
+    this.largeMode = false;
+    this.choicedPhoto = photo;
   }
 }
