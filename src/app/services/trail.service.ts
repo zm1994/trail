@@ -17,9 +17,7 @@ export class TrailService {
     params.set('param', name);
     if (onlyTrails) params.set('complex', 'true')
     return this.http.get('/api/search/', { search: params })
-      .map((res) => {
-        return res.json()
-      })
+      .map((res) => { res.json() })
       .catch((error) => Observable.throw(error.json() || 'Server error'))
   }
 
@@ -52,6 +50,12 @@ export class TrailService {
     params.set('id', id.toString());
     return this.http.get('/api/trail/', { search: params })
       .map((res) => res.json())
+      .catch((error) => Observable.throw(error.json() || 'Server error'))
+  }
+
+  authentificate() {
+    return this.http.get('/api/auth/facebook/')
+      .map((res) =>  res.json())
       .catch((error) => Observable.throw(error.json() || 'Server error'))
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core'
-// import { TrailService } from '../../services/trail.service'
+import { TrailService } from '../services/trail.service'
 
 
 @Component({
@@ -13,8 +13,7 @@ export class HeaderComponent implements OnInit {
   searchFormIsShown: boolean;
   device: any;
 
-  constructor() {
-    // this.window = new Window();
+  constructor(private trailServ: TrailService) {
   }
 
   ngOnInit() {
@@ -29,5 +28,9 @@ export class HeaderComponent implements OnInit {
     this.searchFormIsShown = true;
   }
 
-
+  authentificate() {
+    this.trailServ.authentificate()
+      .subscribe(res => console.log(res),
+                  err => console.log(err))
+  }
 }
