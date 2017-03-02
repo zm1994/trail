@@ -2,8 +2,6 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var pg = require('pg') //postgress library
 var multer = require('multer'); //liprary for uploads file
-var passport = require('passport');
-var FacebookStrategy = require('passport-facebook').Strategy;
 var app = express();
 app.use(bodyParser.json());
 
@@ -19,8 +17,6 @@ app.use(function (req, res, next) { //allow cross origin requests
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 app.use(express.static('server/uploads'));
-app.use(passport.initialize());
-app.use(passport.session());
 
 var Pool = pg.Pool;
 pg.defaults.ssl = true;
@@ -68,29 +64,6 @@ exports.upload = multer({
   limits:{ fileSize: 10*1024*1024 }
 }).single('file');
 
-passport.use(new FacebookStrategy({
-    clientID: 723928951100472,
-    clientSecret: 'e2db9ff7ad0d52b0c2322c3c1ac3a933',
-    callbackURL: "http://localhost:8080/api/auth/facebook/callback"
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    //console.log(cb)
-    // console.log(refreshToken)
-    // console.log(profile)
-    // req.session.username = req.body.username;
-    //sessionStorage.setItem('token', accessToken);
-
-    return cb(null, profile);
-  }
-));
-
-passport.serializeUser(function(user, done) {
-  done(null, user);
-});
-
-passport.deserializeUser(function(user, done) {
-  done(null, user);
-});
 
 var trail = require('./server/trail_api');
 
@@ -104,30 +77,18 @@ app.get('/api/trail/count/', trail.getCountTrails)
 
 app.post('/api/upload/', trail.uploadFile);
 
+var passport = require('./server/user_api.js').passportFacebook;
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.get('/api/auth/facebook/', passport.authenticate('facebook', { scope : 'email' }));
-
-
-
-// var expressSession = require( 'express-session' );
-//
-// var session = expressSession({
-//   secret: '60dd06aa-cf8e-4cf8-8925-6de720015ebf',
-//   resave: false,
-//   saveUninitialized: false,
-//   name: 'sid'
-// });
-var passportSession = passport.session();
-
-// app.use( session );
-app.use(passportSession)
 
 // handle the callback after facebook has authenticated the user
 app.get('/api/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }),
   function(req, res) {
-    // Successful authentication, redirect home.
-    // console.log(req)
-    console.log()
-    res.send({ user: req.session.passport.user})
+    res.cookie('user', req.session.passport.user.id)
+    res.cookie('test', "tets")
+    res.redirect("/")
   })
 
 //send unknown request to index.html, which will be catch by angular2 router-outlet

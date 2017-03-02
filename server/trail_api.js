@@ -1,4 +1,4 @@
-var server = require('../server')
+var server = require('../server');
 var pool = server.pool_connection
 var handleResponse = server.handleResponse
 var upload = server.upload
@@ -14,7 +14,6 @@ exports.searchTrail = function (req, res) {
 exports.getCountries = function (req, res) {
   pool.query("Select * from show_countries_extended", function (error, client) { handleResponse(error, client, res) })
 }
-
 
 exports.getTrails = function (req, res) {
   if (!!req.query.featured)
