@@ -23,6 +23,7 @@ import { OwlCarousel } from './shared/owl_carousel/owl_carousel.component'
 import { CarouselModule } from 'ng2-bootstrap';
 
 import { TrailService } from './services/trail.service'
+import { UserService } from './services/user.service'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { TrailService } from './services/trail.service'
     SearchComponent,
     TrailComponent,
     TrailPhotosComponent,
-    PhotoUploaderComponent
+    PhotoUploaderComponent,
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -51,9 +52,8 @@ import { TrailService } from './services/trail.service'
     ProgressbarModule.forRoot(),
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
-
   ],
-  providers: [TrailService],
+  providers: [TrailService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

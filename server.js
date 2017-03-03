@@ -1,5 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var crypto = require('crypto-js')
 var pg = require('pg') //postgress library
 var multer = require('multer'); //liprary for uploads file
 var app = express();
@@ -86,10 +87,12 @@ app.get('/api/auth/facebook/', passport.authenticate('facebook', { scope : 'emai
 // handle the callback after facebook has authenticated the user
 app.get('/api/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }),
   function(req, res) {
-    res.cookie('user', req.session.passport.user.id)
-    res.cookie('test', "tets")
+    //add cookie id user
+    res.cookie('user', req.session.passport.user.id);
+    //add cookie enrypted user role
+    res.cookie('user_token', crypto.AES.encrypt(req.session.passport.user.role, 'facebook').toString(), 'facebook');
     res.redirect("/")
-  })
+  });
 
 //send unknown request to index.html, which will be catch by angular2 router-outlet
 app.get('*', function(req, res) {

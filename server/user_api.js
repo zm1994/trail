@@ -10,11 +10,10 @@ passport.use(new FacebookStrategy({
   function(accessToken, refreshToken, profile, cb) {
     pool.query("Select *from find_or_create_user($1, $2)", [profile.id, profile.displayName], function(error, client){
         if(error) return cb(error, profile)
-        console.log(client.rows)
-        //profile.role = client[0].role
+        //add to profile user's role from database
+        profile.role = client.rows[0].find_or_create_user
+        return cb(null, profile);
     })
-    console.log(profile)
-    return cb(null, profile);
   }
 ));
 
@@ -27,6 +26,3 @@ passport.deserializeUser(function(user, done) {
 });
 
 exports.passportFacebook = passport;
-
-// var passportSession = passport.session();
-// app.use(passportSession)
