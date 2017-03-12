@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit{
   }
 
   ngOnInit() {
-    console.log('hi')
-    console.log(this.userServ.userRole)
+    // console.log('hi')
+    // console.log(this.userServ.userRole)
   }
 }

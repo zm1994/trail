@@ -6,8 +6,9 @@
       <photo-uploader *ngIf="trail.images.length >= 1" [contentUploadLink]="sendUploadLinkText()" [trailId]="trail.id" (photoUpload)="onPhotoUpload($event)"></photo-uploader>
     </trail-photos>
     <div *ngIf="trail.images.length == 0" class="upload_link col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <photo-uploader  [contentUploadLink]="sendUploadLinkText()" 
+      <photo-uploader  [contentUploadLink]="sendUploadLinkText()"
         [trailId]="trail.id" (photoUpload)="onPhotoUpload($event)"></photo-uploader>
     </div>
+    <main-info [trail]="trail"></main-info>
 </section>
 

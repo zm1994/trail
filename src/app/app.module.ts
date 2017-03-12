@@ -7,7 +7,7 @@ import { AlertModule } from 'ng2-bootstrap';
 import { CollapseModule } from 'ng2-bootstrap';
 import { ProgressbarModule } from 'ng2-bootstrap'
 import { RouterModule } from '@angular/router'
-import { ROUTES } from './routes'
+import { CarouselModule } from 'ng2-bootstrap';
 
 import { AppComponent } from './app.component';
 import { CountriesComponent } from './home/countries/countries.component'
@@ -20,10 +20,14 @@ import { HeaderComponent } from './header/header.component'
 import { TrailPhotosComponent } from './trail/trail_photos/trail_photos.component'
 import { PhotoUploaderComponent } from './trail/photo_uploader/photo_uploader.component'
 import { OwlCarousel } from './shared/owl_carousel/owl_carousel.component'
-import { CarouselModule } from 'ng2-bootstrap';
+import { MainInfoComponent} from './trail/main_info/main_info.component';
 
 import { TrailService } from './services/trail.service'
 import { UserService } from './services/user.service'
+
+import { ToMonthPipe } from './shared/pipes/to_month.pipe'
+
+import { ROUTES } from './routes'
 
 @NgModule({
   declarations: [
@@ -33,8 +37,10 @@ import { UserService } from './services/user.service'
     FileSelectDirective,
     HeaderComponent,
     HomeComponent,
+    MainInfoComponent,
     OwlCarousel,
     SearchComponent,
+    ToMonthPipe,
     TrailComponent,
     TrailPhotosComponent,
     PhotoUploaderComponent,
