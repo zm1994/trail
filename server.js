@@ -46,8 +46,9 @@ exports.pool_connection = pool;
 exports.handleResponse = function (err, client, res) {
   if (err)
     res.status(500).send(err.message || err)
-  else
+  else{
     res.send(client.rows)
+  }
 };
 
 var storage = multer.diskStorage({ //multers disk storage settings
@@ -94,9 +95,14 @@ app.get('/api/auth/facebook/callback', passport.authenticate('facebook', { failu
     res.redirect("/")
   });
 
+app.get('/api/logout/facebook',  function(req, res) {
+  req.logout();
+  res.clearCookie("user");
+  res.clearCookie("user_token");
+  res.redirect('/');
+});
+
 //send unknown request to index.html, which will be catch by angular2 router-outlet
 app.get('*', function(req, res) {
   res.sendFile(distDir + '/index.html');
 });
-
-

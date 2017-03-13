@@ -31,10 +31,12 @@ export class SearchComponent implements OnChanges {
       .distinctUntilChanged();
 
     eventStream.subscribe((input) => {
-      if(!!input)
+      if(!!input){
         this.trailServ.searchTrails(input, this.onlyTrails).subscribe((res) => {
           this.searchVarians = <SearchVariant[]>res
+          console.log(this.searchVarians)
         }, (err) => console.log(err))
+      }
       else this.searchVarians = []
     });
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { TrailService } from '../services/trail.service'
+import {UserService} from "../services/user.service";
 
 
 @Component({
@@ -11,16 +12,16 @@ import { TrailService } from '../services/trail.service'
 export class HeaderComponent implements OnInit {
   @Input() withSearchForm: boolean;
   searchFormIsShown: boolean;
-  device: any;
+  isLogged: boolean;
 
-  constructor(private trailServ: TrailService) {
+  constructor(
+    private trailServ: TrailService,
+    private userServ: UserService) {
   }
 
   ngOnInit() {
-    this.device = window;
-    // if device is desctop search input is shown default else it is hidden
-    console.log(this.device)
-    // this.searchFormIsShown = window.innerWidth > 992;
+    console.log(this.userServ.userIsLogged())
+    this.isLogged = this.userServ.userIsLogged();
   }
 
 

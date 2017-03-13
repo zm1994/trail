@@ -9,7 +9,8 @@
     <a href="/" class="logo">OUTDOOR.ROCKS</a>
   </div>
   <div class="col-xs-0 col-sm-2 col-md-2 col-md-push-1 col-lg-1 join_us">
-    <a href="/api/auth/facebook" target="_self">join us</a>
+    <a *ngIf="!isLogged" href="/api/auth/facebook" target="_self">join us</a>
+    <a *ngIf="isLogged" href="/api/logout/facebook" target="_self">log out</a>
   </div>
 </nav>
 

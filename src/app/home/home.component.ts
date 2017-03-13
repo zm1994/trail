@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core'
 import { UserService } from '../services/user.service'
+import { UserRole } from '../models/user_role.model'
 
 @Component({
   selector: 'home',
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit{
   }
 
   ngOnInit() {
-    console.log('hi')
-    console.log(this.userServ.userRole)
+    let role: UserRole = this.userServ.userRole;
+    console.log(role)
   }
 }

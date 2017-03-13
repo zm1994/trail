@@ -15,9 +15,11 @@ export class TrailService {
   searchTrails(name: string, onlyTrails: boolean = false) {
     let params: URLSearchParams = new URLSearchParams();
     params.set('param', name);
-    if (onlyTrails) params.set('complex', 'true')
+    if (onlyTrails) params.set('complex', 'false')
     return this.http.get('/api/search/', { search: params })
-      .map((res) => { res.json() })
+      .map((res) => {
+       return res.json()
+    })
       .catch((error) => Observable.throw(error.json() || 'Server error'))
   }
 
