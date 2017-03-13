@@ -15,6 +15,7 @@ input[type="file"] {
   font-weight: bold;
   background: transparent;
   text-overflow: initial;
+  white-space: normal;
 }
 
 .glyphicon.fast-right-spinner {

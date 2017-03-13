@@ -16,13 +16,13 @@ export class UserService {
     return Cookie.get('user_token')
   }
 
-  get userRole() {
+  get userRole(): UserRole {
     if(this.tokenUserRole) {
-      var crypt = CryptoJS.AES.decrypt(this.tokenUserRole.toString(), 'facebook')
+      var crypt = CryptoJS.AES.decrypt(this.tokenUserRole.toString(), 'facebook');
       var plaintext = crypt.toString(CryptoJS.enc.Utf8);
       return UserRole[plaintext];
     }
-    else return '';
+    else return UserRole.not_authorized;
   }
 
   userIsLogged() {

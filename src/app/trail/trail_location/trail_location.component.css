@@ -1,0 +1,10 @@
+.trail_location {
+  height: 300px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.sebm-google-map-container {
+  width: 100%;
+  height: inherit;
+}

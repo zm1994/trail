@@ -10,5 +10,6 @@
         [trailId]="trail.id" (photoUpload)="onPhotoUpload($event)"></photo-uploader>
     </div>
     <main-info [trail]="trail"></main-info>
+  <trail-location [lat]="trail.latitude" [lng]="trail.longitude"></trail-location>
 </section>
 

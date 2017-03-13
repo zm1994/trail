@@ -1,5 +1,6 @@
 .main_info {
   padding: 15px 15px 15px 15px;
+  background: white;
 }
 
 .location {
@@ -10,6 +11,15 @@
   font-weight: bold;
   font-size: 20px;
   padding: 7px 0px 6px 0px;
+}
+
+.geographic_characteristics,
+.geographic_characteristics div,
+.additional_characteristics,
+.additional_characteristics div,
+.additional_characteristics div span,
+.additional_characteristics div span p {
+  padding: 0px;
 }
 
 .why_go > p, .short_description > p {
@@ -48,12 +58,11 @@
 .point-to-point {
   width: 24px;
   height: 24px;
-  margin-top: 72px;
-  background-position-x: center;
-  background-position-y: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain;
+  background-position-x: center !important;
+  background-position-y: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  -moz-background-size: contain !important;
+  -o-background-size: contain !important;
+  background-size: contain !important;
 }

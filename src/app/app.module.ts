@@ -21,6 +21,7 @@ import { TrailPhotosComponent } from './trail/trail_photos/trail_photos.componen
 import { PhotoUploaderComponent } from './trail/photo_uploader/photo_uploader.component'
 import { OwlCarousel } from './shared/owl_carousel/owl_carousel.component'
 import { MainInfoComponent} from './trail/main_info/main_info.component';
+import { TrailLocationComponent } from './trail/trail_location/trail_location.component'
 
 import { TrailService } from './services/trail.service'
 import { UserService } from './services/user.service'
@@ -42,6 +43,7 @@ import { ROUTES } from './routes'
     SearchComponent,
     ToMonthPipe,
     TrailComponent,
+    TrailLocationComponent,
     TrailPhotosComponent,
     PhotoUploaderComponent,
   ],

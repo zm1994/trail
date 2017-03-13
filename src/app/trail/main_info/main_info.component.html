@@ -7,13 +7,13 @@
   <div class="short_description">Description
     <p>{{trail.description}}</p>
   </div>
-  <div class="col-xs-6">
-    <div class="col-xs-12">Length {{trail.length}}</div>
-    <div class="col-xs-12">Length {{trail.season_month_from | toMonth}} - {{trail.season_month_to | toMonth}}</div>
-    <div class="col-xs-12">Length {{trail.elevation}}</div>
-    <div class="col-xs-12">Length {{trail.peak}}</div>
+  <div class="col-xs-6 geographic_characteristics">
+    <div class="col-xs-12">Length {{trail.length}} km</div>
+    <div class="col-xs-12">Season {{trail.season_month_from | toMonth}} - {{trail.season_month_to | toMonth}}</div>
+    <div class="col-xs-12">Elevation {{trail.elevation}} km</div>
+    <div class="col-xs-12">Peak {{trail.peak}} km</div>
   </div>
-  <div class="col-xs-6">
+  <div class="col-xs-6 additional_characteristics">
     <div *ngIf="trail.good_for_kids" class="col-xs-12">
       <span class="good_for_kids col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
       <p class="col-xs-9">Good for kids</p>
@@ -23,7 +23,7 @@
       <p class="col-xs-9">Dog allowed</p>
     </div>
     <div *ngIf="trail.is_one_day" class="col-xs-12">
-      <span class="is_one_day col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
+      <span class="one_day col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
       <p class="col-xs-9">One day</p>
     </div>
     <div *ngIf="!trail.is_one_day" class="col-xs-12">
@@ -31,8 +31,9 @@
       <p class="col-xs-9">Several days</p>
     </div>
     <div class="col-xs-12">
-      <span class="col-sm-3 col-md-3 col-lg-3"
-            [style.background-image]="'url(../../../assets/icons/' + trail.type_trail.toLowerCase() + '-black.png)'"></span>
+      <span class=" col-xs-3 col-sm-3 col-md-3 col-lg-3"
+            [ngClass]="trail.type_trail.toLowerCase()"
+            [style.background]="'url(../../../assets/icons/' + trail.type_trail.toLowerCase() + '-black.png)'"></span>
       <p class="col-xs-9">{{trail.type_trail}}</p>
     </div>
   </div>

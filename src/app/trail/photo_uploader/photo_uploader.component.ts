@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, OnChanges, EventEmitter, Output, AfterViewInit } from '@angular/core'
 import { FileUploader, FileUploaderOptions } from 'ng2-file-upload';
+import {UserService} from "../../services/user.service";
+import {UserRole} from "../../models/user_role.model";
 
 @Component({
   selector: 'photo-uploader',
@@ -14,8 +16,12 @@ export class PhotoUploaderComponent implements OnChanges, OnInit, AfterViewInit 
   @Input() trailId: number;
   @Input() contentUploadLink: string;
   @Output() photoUpload: EventEmitter<string>;
+  canUpload: boolean = false;
 
-  constructor() {
+  constructor(private userServ: UserService) {
+    if(userServ.userRole == UserRole.admin) {
+      this.canUpload = true;
+    }
     this.URL = window.location.origin + '/api/upload/';
     this.uploader = new FileUploader({
       url: this.URL,
@@ -30,9 +36,10 @@ export class PhotoUploaderComponent implements OnChanges, OnInit, AfterViewInit 
 
   ngOnInit() {
     //emit name downloaded file to parent component
-    this.uploader.onSuccessItem = (item:any, response:any, status:any, headers:any) => {
-      this.photoUpload.emit(JSON.parse(response)[0].upload_photo_trail);
-    };
+    if(!!this.uploader)
+      this.uploader.onSuccessItem = (item:any, response:any, status:any, headers:any) => {
+        this.photoUpload.emit(JSON.parse(response)[0].upload_photo_trail);
+      };
   }
 
   ngAfterViewInit() {

@@ -1,8 +1,11 @@
-<div *ngIf="uploader.isUploading" class="text-center">
-  <span class="glyphicon glyphicon-repeat fast-right-spinner"></span>
-</div>
-<a *ngIf="!uploader.isUploading" class="file-input-wrapper btn col-md-12 col-xs-12 col-sm-12 col-lg-12">
-  <span class="upload_link">{{contentUploadLink}}</span>
-  <input type="file" class="btn-primary col-md-12" name="single" ng2FileSelect [uploader]="uploader"
-         title="Search for a file to add">
-</a>
+<section *ngIf="canUpload">
+  <div *ngIf="uploader.isUploading" class="text-center">
+    <span class="glyphicon glyphicon-repeat fast-right-spinner"></span>
+  </div>
+  <a *ngIf="!uploader.isUploading" class="file-input-wrapper btn col-md-12 col-xs-12 col-sm-12 col-lg-12">
+    <span class="upload_link">{{contentUploadLink}}</span>
+    <input type="file" class="btn-primary col-md-12" name="single" ng2FileSelect [uploader]="uploader"
+           title="Search for a file to add">
+  </a>
+</section>
+<div *ngIf="!canUpload" class="alert alert-info">For uploading please authenticate as admin</div>
