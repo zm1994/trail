@@ -8,6 +8,7 @@ import { CollapseModule } from 'ng2-bootstrap';
 import { ProgressbarModule } from 'ng2-bootstrap'
 import { RouterModule } from '@angular/router'
 import { CarouselModule } from 'ng2-bootstrap';
+import { RatingModule } from 'ng2-bootstrap';
 
 import { AppComponent } from './app.component';
 import { CountriesComponent } from './home/countries/countries.component'
@@ -58,6 +59,7 @@ import { ROUTES } from './routes'
     FormsModule,
     HttpModule,
     ProgressbarModule.forRoot(),
+    RatingModule.forRoot(),
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
   ],
