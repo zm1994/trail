@@ -5,7 +5,7 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 passport.use(new FacebookStrategy({
     clientID: 723928951100472,
     clientSecret: 'e2db9ff7ad0d52b0c2322c3c1ac3a933',
-    callbackURL: "https://famoustrails.herokuapp.com/api/auth/facebook/callback"
+    callbackURL: "http://localhost:8080/api/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
     pool.query("Select *from find_or_create_user($1, $2)", [profile.id, profile.displayName], function(error, client){
