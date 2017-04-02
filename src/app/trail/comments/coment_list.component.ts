@@ -7,6 +7,6 @@ import { Component, OnInit } from '@angular/core'
     styleUrls: ['comment_list.component.css']
 })
 
-export class CommentListComponent implements OnInit {
+export class CommentListComponent {
     
 }
